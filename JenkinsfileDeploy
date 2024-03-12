@@ -1,0 +1,78 @@
+pipeline {
+    agent {
+      docker {
+        image 'ghcr.io/felipecrs/jenkins-agent-dind:20230330'
+        alwaysPull false
+        args '--privileged --group-add=docker'
+      }
+    }
+
+    parameters {
+     choice(
+       name: "locate",
+       choices: ['dev',/*'demo',*/'prod'],
+       description: 'On which stand to deploy the service ?')
+    }
+    
+
+    stages {
+      stage ('Connect to TFS') {
+        steps {
+          script {
+            switch("${params.locate}") {
+              case "dev":
+               BRANCHNAME = "develop"
+              break
+              //case "demo":
+              // BRANCHNAME = "demo"
+              //break
+              case "prod":
+               BRANCHNAME = "master"
+              break
+            }
+            checkout([$class: 'GitSCM', branches: [[name: "${BRANCHNAME}" ]], userRemoteConfigs: [[credentialsId: '2d9d4c57-b2e4-490b-8307-e520e2fee794', url: "http://tfs.solarlab.ru/" ]]])
+            sh "git status"
+            //sh "cat docker-compose.yml"
+          }
+        }
+      }
+
+      stage ('Deploy project') {
+        steps {
+          script {
+            if ("${params.locate}" == "") {
+               error("Aborting the build.")
+            }
+            switch("${params.locate}") {
+              case "dev":
+                SERVICE_HOST = "172.27.65.17"
+              break
+              //case "demo":
+              //  SERVICE_HOST = "0.0.0.0"
+              //break
+              case "prod":
+                SERVICE_HOST = ""
+              break
+            }
+            restarts = 0
+            while(restarts <= 5) {  
+              sshagent(credentials:['891c55a9-b772-4e69-b2fd-aa5e16610262']){
+                command_status=sh(script:"""ssh  -o StrictHostKeyChecking=no sluser@${SERVICE_HOST} "docker-compose version" && echo "Success" || echo "Faile" """,returnStdout: true).trim()
+                if (command_status == "Faile") {
+                  restarts++
+                  return
+                }
+                command_status=sh(script:""" docker-compose -H ssh://sluser@${SERVICE_HOST} -f docker-compose.yml --project-name dfa_landing up -d --build && echo "Success" || echo "Faile" """,returnStdout: true).trim()
+              }
+                if (command_status == "Faile") {
+                  restarts++
+                  sleep(10)
+                } else {
+                    break; 
+                  }
+            }
+          }
+        }
+      }
+    }
+}
