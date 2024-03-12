@@ -30,7 +30,7 @@ pipeline {
                BRANCHNAME = "master"
               break
             }
-            checkout([$class: 'GitSCM', branches: [[name: "${BRANCHNAME}" ]], userRemoteConfigs: [[credentialsId: '2d9d4c57-b2e4-490b-8307-e520e2fee794', url: "http://tfs.solarlab.ru/" ]]])
+            checkout([$class: 'GitSCM', branches: [[name: "${BRANCHNAME}" ]], userRemoteConfigs: [[credentialsId: '2d9d4c57-b2e4-490b-8307-e520e2fee794', url: "https://tfs.solarlab.ru/DefaultCollection/SolarLab.WebUI/_git/DFA.Landing" ]]])
             sh "git status"
             //sh "cat docker-compose.yml"
           }
