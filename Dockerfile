@@ -1,4 +1,4 @@
-FROM node:18.15.0 as builder
+FROM node:16-buster as builder
 WORKDIR /usr/src/app
 COPY package.json .
 RUN npm ci
