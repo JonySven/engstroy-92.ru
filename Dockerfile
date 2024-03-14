@@ -1,7 +1,6 @@
 FROM node:16-buster as builder
 WORKDIR /usr/src/app
 COPY package.json .
-RUN npm ci
 COPY . .
 RUN npm install gulp-cli  
 RUN npm install           
