@@ -1,9 +1,10 @@
 version: "3.8"
 services:
-  dfa-landing-front:
+  client:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: dfa-landing-client
     ports:
       - "8081:8081"
     restart: unless-stopped
