@@ -62,7 +62,7 @@ pipeline {
                   restarts++
                   return
                 }
-                command_status=sh(script:""" docker-compose -H ssh://sluser@${SERVICE_HOST} -f docker-compose.yml up -d --build && echo "Success" || echo "Faile" """,returnStdout: true).trim()
+                command_status=sh(script:""" docker-compose -H ssh://sluser@${SERVICE_HOST} -f docker-compose.yml --project-name dfa-landing up -d --build && echo "Success" || echo "Faile" """,returnStdout: true).trim()
               }
                 if (command_status == "Faile") {
                   restarts++
