@@ -51,7 +51,7 @@ pipeline {
               //  SERVICE_HOST = "0.0.0.0"
               //break
               case "prod":
-                SERVICE_HOST = ""
+                SERVICE_HOST = "172.27.65.17"
               break
             }
             restarts = 0
