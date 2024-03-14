@@ -9,6 +9,8 @@ let path = {
     documents: source_folder + "/docs/**/*",
     img: source_folder + "/img/**",
     captcha: source_folder + "/captcha/*.js",
+    robots: source_folder + "/*.txt",
+    siteMap: source_folder + "/*.xml"
   },
   build: {
     html: project_folder + "/",
@@ -37,7 +39,6 @@ const gulp = require("gulp"),
   autoprefixer = require("gulp-autoprefixer"),
   scss = require('gulp-sass')(require('sass'));
   replace = require("gulp-replace");
-  htmlreplace = require("gulp-html-replace");
   let rename = require("gulp-rename");
   let cleanCSS = require("gulp-clean-css");
 let argv = require('yargs').argv; // The contemporary library of choice for parsing command arguments (in this case flags)
@@ -82,8 +83,7 @@ gulp.task("browserSyncApp", function () {
     server: {
       baseDir: "./" + project_folder + "/",
     },
-    port: 4200,
-    notify: false
+    notify: false,
   });
 });
 
@@ -94,8 +94,16 @@ async function imageminApp() {
     .pipe(browserSyncApp.stream());
 }
 
-async function docsinApp() {
-  gulp.src(path.src.documents).pipe(gulp.dest(path.build.documents));
+async function robots() {
+  return gulp
+  .src(path.src.robots)
+  .pipe(gulp.dest(project_folder))
+}
+
+async function siteMap() {
+  return gulp
+  .src(path.src.siteMap)
+  .pipe(gulp.dest(project_folder))
 }
 
 gulp.task("removedist", function () {
@@ -107,7 +115,7 @@ async function replaceApiUrl() {
   const settings = JSON.parse(fs.readFileSync('environment-config.json', 'utf8'));
   const env = argv.env;
   const settingsEnv = settings[env] ? settings[env] : settings['prod'];
-  gulp.src(['./dist/index.html', './dist/humanometr.html', './dist/js/scripts.min.js'])
+  gulp.src(['./dist/index.html', './dist/index.html', './dist/js/scripts.min.js'])
       .pipe(replace('@@apiUrl', settingsEnv.apiUrl))
       .pipe(replace('@@captchaKey', settingsEnv.captchaKey))
       .pipe(replace('@@mailApiUrl', settingsEnv.mailApiUrl))
@@ -123,7 +131,7 @@ function watchFiles() {
   gulp.watch([path.watch.img], imageminApp);
 }
 
-const build = gulp.series("removedist", html, js, gulp.parallel(css, imageminApp,   captcha, docsinApp));
+const build = gulp.series("removedist", html, js, replaceApiUrl, gulp.parallel(css, imageminApp,   captcha, robots, siteMap));
 
 const watch = gulp.parallel(build, watchFiles, "browserSyncApp");
 
@@ -134,3 +142,5 @@ exports.imageminApp = imageminApp;
 exports.watch = watch;
 exports.build = build;
 exports.captcha = captcha;
+exports.robots = robots;
+exports.siteMap = siteMap;
