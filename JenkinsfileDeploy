@@ -21,7 +21,7 @@ pipeline {
           script {
             switch("${params.locate}") {
               case "dev":
-               BRANCHNAME = "master"
+               BRANCHNAME = "develop"
               break
               //case "demo":
               // BRANCHNAME = "demo"
