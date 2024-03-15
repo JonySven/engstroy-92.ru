@@ -264,28 +264,82 @@ legend {
         grid-template-columns: 1fr 1fr;
         gap: 30px;
         margin-top: 95px;
+
         &__items {
             .item {
                 display: flex;
                 align-items: center;
+
                 &__subtext {
                     font-size: 1rem;
                     font-weight: 400;
                     line-height: 140%;
                     color: #9A9A9A;
                 }
-                &__link{
+
+                &__link {
                     color: #28B380;
                 }
-                .text{
+
+                .text {
                     font-weight: 500;
                 }
             }
         }
-        &__block:nth-child(1){
+
+        &__block:nth-child(1) {
             max-width: 600px;
             width: 100%;
         }
     }
 
+}
+
+.banner {
+    padding: 50px 0;
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 50px 40px;
+        background-color: #23CB8D;
+        border-radius: 24px;
+    }
+
+    &__img {
+        position: absolute;
+        top: -65px;
+        left: 70px;
+    }
+
+    &__block {
+        margin-left: auto;
+        color: #fff;
+        max-width: 63%;
+    }
+
+    &__title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 4.5rem;
+    }
+
+    &__text {
+        margin-top: 20px;
+        color: #fff;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        padding: 19px 32px;
+        border-radius: 50px;
+        background: rgb(0, 60, 81);
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.81rem;
+    }
 }
