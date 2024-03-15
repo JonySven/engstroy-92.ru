@@ -269,6 +269,7 @@ legend {
             .item {
                 display: flex;
                 align-items: center;
+                gap: 20px;
 
                 &__subtext {
                     font-size: 1rem;
@@ -342,4 +343,210 @@ legend {
         font-weight: 700;
         line-height: 1.81rem;
     }
+}
+
+.infrastructure {
+    margin-top: 100px;
+    padding-bottom: 100px;
+    background-color: #F7F7F7;
+
+    &__wrap {
+        display: flex;
+        align-items: flex-end;
+        gap: 100px;
+
+        .h2 {
+            margin-bottom: 75px;
+        }
+    }
+
+    &__i-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: 8fr 9fr;
+        margin-top: 60px;
+
+        .item {
+            margin-top: 16px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 45px;
+        margin-right: auto;
+        color: #22AB79;
+        font-weight: 700;
+
+        img {
+            margin-left: 12px;
+        }
+    }
+
+    &__table {
+        margin-top: 60px;
+        text-align: left;
+        font-family: 'Roboto';
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.01rem;
+        border: 1px solid #EEEDED;
+        border-radius: 24px;
+        border-spacing: 0em;
+        overflow: hidden;
+
+        &__title {
+            padding: 16px;
+            font-weight: 700;
+            background-color: #E6F0F3;
+        }
+
+        &__head {
+            padding: 16px;
+            font-weight: 700;
+        }
+
+        &__text {
+            padding: 16px;
+            font-weight: 400;
+
+            &:nth-child(3) {
+                text-align: center;
+            }
+
+            &:nth-child(4) {
+                text-align: center;
+            }
+
+            &:nth-child(5) {
+                text-align: center;
+            }
+        }
+
+        .bg-white {
+            background-color: #fff;
+        }
+    }
+
+    &__documentation {
+        margin-top: 65px;
+
+        &__wrap {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 16px;
+            width: fit-content;
+            background-color: #fff;
+            border-radius: 12px;
+            font-size: 1.13rem;
+            font-weight: 600;
+            line-height: 2.25rem;
+
+            a {
+                color: #22AB79;
+                text-decoration: none;
+            }
+        }
+    }
+
+
+}
+
+.footer-wrap {
+    padding: 125px 0;
+    .offer {
+        display: flex;
+        justify-content: space-between;
+        gap: 115px;
+        &__about {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            &__title {}
+
+            &__contacts {
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 1.81rem;
+
+                .phone {
+                    color: #003C51;
+                }
+
+                .mail {
+                    margin-top: 10px;
+                    color: #28B380;
+                }
+
+                .copy {
+                    margin-left: 10px;
+                }
+
+                .adress {
+                    margin-top: 15px;
+                    font-weight: 400;
+                }
+            }
+
+        }
+
+        &__form {
+            .input {
+                margin-bottom: 27px;
+                padding: 20px 10px;
+                font-size: 1.25rem;
+                font-weight: 400;
+                resize: vertical;
+                color: #6F8787;
+                width: 100%;
+                border: 1px solid rgb(217, 217, 217);
+                border-radius: 5px;
+
+                &::placeholder {
+                    color: #767676;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 25px 0;
+                font-family: 'Roboto';
+                color: #fff;
+                font-size: 1.25rem;
+                font-weight: 700;
+                line-height: 1.44rem;
+                border-radius: 50px;
+                background: #003C51;
+            }
+        }
+    }
+
 }

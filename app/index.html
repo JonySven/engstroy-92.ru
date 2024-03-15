@@ -150,7 +150,311 @@
           </div>
         </div>
       </div>
+    </section> 
+
+    <section class="infrastructure">
+      <div class="w-container">
+        <div class="infrastructure__wrap">
+          <h2 class="h2">
+            Необходимая <br />
+            инфраструктура
+          </h2>
+
+          <div class="infrastructure__i-wrap">
+            <img
+              class="infrastructure__img"
+              src="./img/cubesInfra.png"
+              alt=""
+            />
+
+            <div class="infrastructure__items">
+              <p class="item text">PostgreSQL Cluster</p>
+              <p class="item text">Elasticsearch Cluster</p>
+              <p class="item text">Redis Cluster</p>
+              <p class="item text">Hyperledger Fabric Orderer Cluster</p>
+              <p class="item text">RabbitMQ Cluster</p>
+              <p class="item text">Hyperledger Fabric Peers</p>
+            </div>
+
+            <button class="infrastructure__btn text" type="button">
+              Подробнее <img src="./img/arrow.svg" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <table  class="infrastructure__table">
+            <thead>
+              <tr>
+                <th class="infrastructure__table__title">
+                  Компонент инфраструктуры
+                </th>
+                <th class="infrastructure__table__title">Описание</th>
+                <th class="infrastructure__table__title">CPU</th>
+                <th class="infrastructure__table__title">RAM</th>
+                <th class="infrastructure__table__title">DISK (HDD/SSD)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">PostgreSQL Cluster</td>
+                <td class="infrastructure__table__text">
+                  Высокодоступный кластер PostgreSQL (БД) для хранения данных
+                  приложений
+                </td>
+                <td class="infrastructure__table__text">6</td>
+                <td class="infrastructure__table__text">24</td>
+                <td class="infrastructure__table__text">100Gi</td>
+              </tr>
+              <tr>
+                <td class="infrastructure__table__head">Redis Cluster</td>
+                <td class="infrastructure__table__text">
+                  Распределенный кеш для сервисов приложений
+                </td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">16</td>
+                <td class="infrastructure__table__text">-</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">RabbitMQ Cluster</td>
+                <td class="infrastructure__table__text">
+                  Кластер очереди RabbitMQ для обмена сообщениями между
+                  микросервисов
+                </td>
+                <td class="infrastructure__table__text">6</td>
+                <td class="infrastructure__table__text">6</td>
+                <td class="infrastructure__table__text">30Gi</td>
+              </tr>
+              <tr>
+                <td class="infrastructure__table__head">
+                  Elasticsearch Cluster
+                </td>
+                <td class="infrastructure__table__text">
+                  Кластер Elasticsearch для хранения журналов микросервисов и
+                  инфраструктуктурных компонентов
+                </td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">16</td>
+                <td class="infrastructure__table__text">150Gi</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Orderer Cluster
+                </td>
+                <td class="infrastructure__table__text">
+                  Высокодоступный кластер службы упорядочивания распределенного
+                  реестра
+                </td>
+                <td class="infrastructure__table__text">12</td>
+                <td class="infrastructure__table__text">12</td>
+                <td class="infrastructure__table__text">150Gi</td>
+              </tr>
+              <tr>
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Peer - 1
+                </td>
+                <td class="infrastructure__table__text">Узел эмуляции и подтверждения траназкции организации</td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">50Gi</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Peer - 2
+                </td>
+                <td class="infrastructure__table__text">Узел эмуляции и подтверждения траназкции организации</td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">50Gi</td>
+              </tr>
+              <tr>
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Peer - 1 CouchDB
+                </td>
+                <td class="infrastructure__table__text">
+                  Кластер БД хранящий World State для узла Peer-1 состоящий из
+                  2ух узлов с (master-master) репликацией
+                </td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">50Gi</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Peer - 2 CouchDB
+                </td>
+                <td class="infrastructure__table__text">
+                  Кластер БД хранящий World State для узла Peer-2 состоящий из
+                  2ух узлов с (master-master) репликацией
+                </td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">50Gi</td>
+              </tr>
+            </tbody>
+          </table>
+
+        <div class="infrastructure__documentation">
+          <h3 class="h3">Техническая документация</h3>
+          <div class="infrastructure__documentation__wrap">
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Сведения о стоимости</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Эксплуатация экзенпляра ПО</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Руководство инвестора</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Руководство эмитента</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Руководство оператора</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Руководство номинального держателя</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Функциональные характеристики ПО</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="infrastructure__documentation">
+          <h3 class="h3">Информация о лицензиях</h3>
+          <div class="infrastructure__documentation__wrap">
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Выписка ООО Зилант-СЗКИ1</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Выписка ООО ЗИЛАН-ТЗКИ1</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Лицензия для сайта</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Лицензия ФСБ ООО Зилант</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Руководство оператора</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Руководство номинального держателя</a>
+            </div>
+
+            <div class="infrastructure__documentation__item">
+              <img src="./img/download.svg" alt="" />
+              <a href="">Функциональные характеристики ПО</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <footer class="footer-wrap" id="form">
+      <div class="w-container">
+        <section class="offer">
+          <div class="offer__about">
+            <h2 class="offer__about__title h2">Получить  консультацию</h2>
+          
+            <div class="offer__about__contacts">
+              <p class="phone">+7 (843) 207-03-43</p>
+              <a class="mail" href="mailto:corp@zilant.tech"
+                >corp@zilant.tech</a
+              >
+              <span class="copy"
+                ><img src="./img/copy.svg" alt=""
+              /></span>
+              <p class="adress">г. Казань,  улица Галиаскара Камала, <br> д.41, офис 609</p>
+            </div>
+
+          </div>
+
+          <form class="offer__form">
+            <div class="offer__form-input-container">
+              <input
+                placeholder="Имя"
+                name="name"
+                type="text"
+                id="offer__form-name"
+                class="offer__form-name input"
+                required
+              />
+              <span class="input-error-message"></span>
+            </div>
+            <div class="offer__form-input-container">
+              <input
+                placeholder="Телефон"
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                id="offer__form-phone"
+                class="offer__form-phone input"
+                maxlength="12"
+                pattern="[0-9]{1,12}"
+                oninput="this.value = this.value.replace(/[^+0-9]/g, '')"
+                required
+              />
+              <span class="input-error-message"></span>
+            </div>
+            <div class="offer__form-input-container">
+              <input
+                placeholder="Название компании"
+                name="company"
+                type="text"
+                id="offer__form-company"
+                class="offer__form-company input"
+                required
+              />
+              <span class="input-error-message"></span>
+            </div>
+     
+            <div class="offer__form-input-container">
+              <textarea
+                placeholder="Комментарий"
+                name="message"
+                id="offer__form-message"
+                cols="50"
+                class="offer__form-message input"
+                rows="5"
+                required
+              ></textarea>
+              <span class="input-error-message"></span>
+            </div>
+
+            <div class="offer__form-submit">
+              <button class="btn" type="submit">Отправить</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </footer>
+
+
 
     <script src="./js/scripts.min.js"></script>
     <article class="st">
