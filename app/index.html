@@ -24,546 +24,560 @@
     <title>ЦФА</title>
   </head>
   <body>
-    <section class="intro">
-      <div class="w-container">
-        <div class="intro-head">
-          <img class="intro-head__logo" src="./img/logo.svg" alt="log" />
-          <div class="intro-head-i-wrap">
-            <p class="intro-head__phone">+7 (843) 207-03-43</p>
-            <a class="intro-head__mail" href="mailto:corp@zilant.tech"
-              >corp@zilant.tech</a
-            >
-            <span class="intro-head__copy"
-              ><img src="./img/copy.svg" alt=""
-            /></span>
+    <main>
+      <section class="intro">
+        <div class="w-container">
+          <div class="intro-head">
+            <img class="intro-head__logo" src="./img/logo.svg" alt="log" />
+            <div class="intro-head-i-wrap">
+              <p class="intro-head__phone">+7 (843) 207-03-43</p>
+              <a class="intro-head__mail" href="mailto:corp@zilant.tech"
+                >corp@zilant.tech</a
+              >
+              <span class="intro-head__copy"
+                ><img src="./img/copy.svg" alt=""
+              /></span>
+            </div>
           </div>
+
+          <h1 class="intro__title">
+            Информационная система Цифровых Финансовых Активов
+          </h1>
+          <p class="intro__subtitle text">
+            Быстрый путь к успешному прохождению аудита центрального банка
+            и получения статуса оператора цифровых финансовых активов
+          </p>
+          <button
+            class="intro__btn"
+            onclick="smoothScrolling('#form')"
+            type="button"
+          >
+            Получить консультацию
+          </button>
+          <img class="intro__img" src="./img/main-image.png" alt="" />
         </div>
+      </section>
 
-        <h1 class="intro__title">Информационная система<br />ЦФА «Название»</h1>
-        <p class="intro__subtitle text">
-          Быстрый путь к успешному прохождению аудита центрального банка <br />
-          и получения статуса оператора цифровых финансовых активов
-        </p>
-        <button
-          class="intro__btn"
-          onclick="smoothScrolling('#form')"
-          type="button"
-        >
-          Получить консультацию
-        </button>
-        <img class="intro__img" src="./img/main-image.png" alt="" />
-      </div>
-    </section>
-
-    <section class="advantages">
-      <div class="w-container">
-        <h2 class="h2">Почему стоит выбрать именно<br />нашу платформу ЦФА?</h2>
-
-        <div class="advantages__items">
-          <div class="item first">
-            <h4 class="h3">Полный контроль</h4>
-            <p class="text">
-              Доработаем платформу под ваши задачи. После приобретения можете
-              развивать платформу своими силами или привлекая другого
-              подрядчика, получить полный технологический контроль над
-              платформой (включая исходные коды).
-            </p>
-          </div>
-
-          <div class="advantages__wrap">
-            <div class="item">
-              <img src="./img/shield.svg" alt="" />
-              <h4 class="item__title">Надёждный вендор</h4>
-              <p class="item__text">
-                Мы имеем слаженную и опытную команду, работающую в этом
-                направлении не один год. При разработке ПО, мы придерживаемся
-                принципа безопасной разработки DevSecOps
-              </p>
-              <a class="item__link" href="">Лицензии</a>
-            </div>
-
-            <div class="advantages__i-wrap">
-              <div class="item">
-                <img src="./img/a1.svg" alt="" />
-                <h4 class="item__title">Гибкие условия</h4>
-                <p class="item__text">
-                  Предложим условия работы, которые подойдут вам: продажа,
-                  аренда, лизинг. Предоставляем льготные условия до прохождения
-                  аудита центрального банка и начала реальной работы платформы
-                </p>
-              </div>
-
-              <div class="item">
-                <img src="./img/a2.svg" alt="" />
-                <h4 class="item__title">Применяем цифровую подпись</h4>
-                <p class="item__text">Для юридически значимых действий</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="advantages-decision">
-          <div class="advantages-decision__block">
-            <h2 class="h3">Проверенное решение</h2>
-            <p class="text">
-              Платформа вошла в первую десятку решений, операторы которых
-              получили аккредитацию центрального банка РФ как оператор
-              информационной системы цифровых прав.
-            </p>
-          </div>
-
-          <div class="advantages-decision__block">
-            <div class="advantages-decision__items">
-              <div class="item">
-                <img src="./img/yarl.svg" alt="" />
-                <div>
-                  <p class="text">Соответствует требованиям Банка России</p>
-                  <p class="item__subtext">ФЗ No259 от 31.07.2020г.</p>
-                </div>
-              </div>
-
-              <div class="item">
-                <img src="./img/yarl.svg" alt="" />
-                <div>
-                  <p class="text">
-                    Включена в
-                    <a
-                      class="item__link"
-                      target="_blank"
-                      href="https://reestr.digital.gov.ru/reestr/1251479/?sphrase_id=334%209112"
-                      >реестр отечественного ПО</a
-                    >
-                  </p>
-                  <p class="item__subtext">
-                    Реестровая запись №16092 от 29.12.2022
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="functionality">
-      <div class="w-container">
-        <h2 class="h2">Функциональность платформы</h2>
-        <p class="text">Отличается для различных ролей пользователей</p>
-        <div class="tabs" id="tabs">
-          <ul class="tabs-nav tabs__controls">
-            <li><a href="#tab-1" class="btn">Оператор</a></li>
-            <li><a href="#tab-2" class="btn">Эмитент</a></li>
-            <li><a href="#tab-3" class="btn">Инвестор</a></li>
-            <li><a href="#tab-4" class="btn">Номинальный держатель</a></li>
-          </ul>
-          <div class="tabs-items">
-            <div class="tabs-item" id="tab-1">
-              <div class="tabs-item__wrap">
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Просмотр информации о размещениях и выпусках <br />
-                    цифровых подписей, истории транзакций
-                  </p>
-                </div>
-
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Просмотр информации о размещениях и выпусках <br />
-                    цифровых подписей, истории транзакций
-                  </p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Арест, блокировка и перевод цифровых подписей по <br />
-                    решению суда
-                  </p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Арест, блокировка и перевод цифровых подписей по <br />
-                    решению суда
-                  </p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Формирование отчетности</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Формирование отчетности</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Аудит операций в системе</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Аудит операций в системе</p>
-                </div>
-              </div>
-              <img src="./img/t1.png" alt="" />
-            </div>
-
-            <div class="tabs-item" id="tab-2">
-              <div class="tabs-item__wrap">
-                <div class="content">
-                  &mdash;
-                  <p>Авторизация по УКЭП</p>
-                </div>
-
-                <div class="content">
-                  &mdash;
-                  <p>Подпись решения о выпуске УКЭП</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Авторизация по ЕСИА</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Просмотр информации о размещениях эмитента и <br />
-                    выпущенных цифровых подписей
-                  </p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Формирование решения о выпуске цифровой подписи</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Принятие решения о выпуске цифровой подписи</p>
-                </div>
-              </div>
-              <img src="./img/t2.png" alt="" />
-            </div>
-
-            <div class="tabs-item" id="tab-3">
-              <div class="tabs-item__wrap">
-                <div class="content">
-                  &mdash;
-                  <p>Авторизация по УКЭП</p>
-                </div>
-
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Просмотр информации о балансах цифровой подписи инвестора,
-                    истории транзакций
-                  </p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Авторизация по ЕСИА</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Подача заявки при первичном размещении цифровой подписи</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>Формирование запроса на регистрацию</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Работа с цифровой подпись на вторичном рынке: Купля-продажа,
-                    мена, залог, передача номинальному держателю, возврат от
-                    номинального держателя
-                  </p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Просмотр информации о размещениях эмитента и выпущенных
-                    Ццифровых подписях
-                  </p>
-                </div>
-              </div>
-              <img src="./img/t3.png" alt="" />
-            </div>
-
-            <div class="tabs-item" id="tab-4">
-              <div class="tabs-item__wrap block">
-                <div class="content">
-                  &mdash;
-                  <p>Возможность формирования отчетности</p>
-                </div>
-
-                <div class="content">
-                  &mdash;
-                  <p>Возможность участия при первичном размещении</p>
-                </div>
-                <div class="content">
-                  &mdash;
-                  <p>
-                    Для переданных цифровых прав: купля-продажа, мена, залог
-                  </p>
-                </div>
-              </div>
-              <img src="./img/t4.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="banner">
-      <div class="w-container">
-        <div class="banner__wrap">
-          <img class="banner__img" src="./img/banner.png" alt="" />
-          <div class="banner__block">
-            <h2 class="banner__title">
-              Мы готовы доработать платформу под ваши задачи
-            </h2>
-            <p class="banner__text text">
-              Напишите нам и мы проконсультируем <br />
-              и ответим на все ваши вопросы
-            </p>
-            <button
-              class="banner__btn"
-              onclick="smoothScrolling('#form')"
-              type="button"
-            >
-              Получить консультацию
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="infrastructure">
-      <div class="w-container">
-        <div class="infrastructure__wrap">
-          <h2 class="h2">
-            Необходимая <br />
-            инфраструктура
+      <section class="advantages">
+        <div class="w-container">
+          <h2 class="advantages__title h2">
+            Почему стоит выбрать именно нашу платформу ЦФА?
           </h2>
 
-          <div class="infrastructure__i-wrap">
-            <img
-              class="infrastructure__img"
-              src="./img/cubesInfra.png"
-              alt=""
-            />
-
-            <div class="infrastructure__items">
-              <p class="item text">PostgreSQL Cluster</p>
-              <p class="item text">Elasticsearch Cluster</p>
-              <p class="item text">Redis Cluster</p>
-              <p class="item text">Hyperledger Fabric Orderer Cluster</p>
-              <p class="item text">RabbitMQ Cluster</p>
-              <p class="item text">Hyperledger Fabric Peers</p>
+          <div class="advantages__items">
+            <div class="item first">
+              <h4 class="h3">Полный контроль</h4>
+              <p class="first__text text">
+                Доработаем платформу под ваши задачи. После приобретения можете
+                развивать платформу своими силами или привлекая другого
+                подрядчика, получить полный технологический контроль над
+                платформой (включая исходные коды).
+              </p>
             </div>
 
-            <div class="infrastructure__wrap-btn text">
+            <div class="advantages__wrap">
+              <div class="item">
+                <img src="./img/shield.svg" alt="" />
+                <h4 class="item__title">Надёждный вендор</h4>
+                <p class="item__text">
+                  Мы имеем слаженную и опытную команду, работающую в этом
+                  направлении не один год. При разработке ПО, мы придерживаемся
+                  принципа безопасной разработки DevSecOps
+                </p>
+                <a class="item__link" href="">Лицензии</a>
+              </div>
+
+              <div class="advantages__i-wrap">
+                <div class="item">
+                  <img src="./img/a1.svg" alt="" />
+                  <h4 class="item__title">Гибкие условия</h4>
+                  <p class="item__text">
+                    Предложим условия работы, которые подойдут вам: продажа,
+                    аренда, лизинг. Предоставляем льготные условия до
+                    прохождения аудита центрального банка и начала реальной
+                    работы платформы
+                  </p>
+                </div>
+
+                <div class="item">
+                  <img src="./img/a2.svg" alt="" />
+                  <h4 class="item__title">Применяем цифровую подпись</h4>
+                  <p class="item__text">Для юридически значимых действий</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="advantages-decision">
+            <div class="advantages-decision__block">
+              <h2 class="h3">Проверенное решение</h2>
+              <p class="text">
+                Платформа вошла в первую десятку решений, операторы которых
+                получили аккредитацию центрального банка РФ как оператор
+                информационной системы цифровых прав.
+              </p>
+            </div>
+
+            <div class="advantages-decision__block">
+              <div class="advantages-decision__items">
+                <div class="item">
+                  <img src="./img/yarl.svg" alt="" />
+                  <div>
+                    <p class="text">Соответствует требованиям Банка России</p>
+                    <p class="item__subtext">ФЗ No259 от 31.07.2020г.</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <img src="./img/yarl.svg" alt="" />
+                  <div>
+                    <p class="text">
+                      Включена в
+                      <a
+                        class="item__link"
+                        target="_blank"
+                        href="https://reestr.digital.gov.ru/reestr/1251479/?sphrase_id=334%209112"
+                        >реестр отечественного ПО</a
+                      >
+                    </p>
+                    <p class="item__subtext">
+                      Реестровая запись №16092 от 29.12.2022
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="functionality">
+        <div class="w-container">
+          <h2 class="h2">Функциональность платформы</h2>
+          <p class="text">Отличается для различных ролей пользователей</p>
+          <div class="tabs" id="tabs">
+            <ul class="tabs-nav tabs__controls">
+              <li><a href="#tab-1" class="btn">Оператор</a></li>
+              <li><a href="#tab-2" class="btn">Эмитент</a></li>
+              <li><a href="#tab-3" class="btn">Инвестор</a></li>
+              <li><a href="#tab-4" class="btn">Номинальный держатель</a></li>
+            </ul>
+            <div class="tabs-items">
+              <div class="tabs-item" id="tab-1">
+                <div class="tabs-item__wrap">
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Просмотр информации о размещениях и выпусках <br />
+                      цифровых подписей, истории транзакций
+                    </p>
+                  </div>
+
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Просмотр информации о размещениях и выпусках <br />
+                      цифровых подписей, истории транзакций
+                    </p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Арест, блокировка и перевод цифровых подписей по <br />
+                      решению суда
+                    </p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Арест, блокировка и перевод цифровых подписей по <br />
+                      решению суда
+                    </p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Формирование отчетности</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Формирование отчетности</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Аудит операций в системе</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Аудит операций в системе</p>
+                  </div>
+                </div>
+                <img src="./img/t1.png" alt="" />
+              </div>
+
+              <div class="tabs-item" id="tab-2">
+                <div class="tabs-item__wrap">
+                  <div class="content">
+                    &mdash;
+                    <p>Авторизация по УКЭП</p>
+                  </div>
+
+                  <div class="content">
+                    &mdash;
+                    <p>Подпись решения о выпуске УКЭП</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Авторизация по ЕСИА</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Просмотр информации о размещениях эмитента и <br />
+                      выпущенных цифровых подписей
+                    </p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Формирование решения о выпуске цифровой подписи</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Принятие решения о выпуске цифровой подписи</p>
+                  </div>
+                </div>
+                <img src="./img/t2.png" alt="" />
+              </div>
+
+              <div class="tabs-item" id="tab-3">
+                <div class="tabs-item__wrap">
+                  <div class="content">
+                    &mdash;
+                    <p>Авторизация по УКЭП</p>
+                  </div>
+
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Просмотр информации о балансах цифровой подписи инвестора,
+                      истории транзакций
+                    </p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Авторизация по ЕСИА</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Подача заявки при первичном размещении цифровой подписи
+                    </p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>Формирование запроса на регистрацию</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Работа с цифровой подпись на вторичном рынке:
+                      Купля-продажа, мена, залог, передача номинальному
+                      держателю, возврат от номинального держателя
+                    </p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Просмотр информации о размещениях эмитента и выпущенных
+                      Ццифровых подписях
+                    </p>
+                  </div>
+                </div>
+                <img src="./img/t3.png" alt="" />
+              </div>
+
+              <div class="tabs-item" id="tab-4">
+                <div class="tabs-item__wrap block">
+                  <div class="content">
+                    &mdash;
+                    <p>Возможность формирования отчетности</p>
+                  </div>
+
+                  <div class="content">
+                    &mdash;
+                    <p>Возможность участия при первичном размещении</p>
+                  </div>
+                  <div class="content">
+                    &mdash;
+                    <p>
+                      Для переданных цифровых прав: купля-продажа, мена, залог
+                    </p>
+                  </div>
+                </div>
+                <img src="./img/t4.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="banner">
+        <div class="w-container">
+          <div class="banner__wrap">
+            <img class="banner__img" src="./img/banner.png" alt="" />
+            <div class="banner__block">
+              <h2 class="banner__title">
+                Мы готовы доработать платформу под ваши задачи
+              </h2>
+              <p class="banner__text text">
+                Напишите нам и мы проконсультируем <br />
+                и ответим на все ваши вопросы
+              </p>
+              <button
+                class="banner__btn"
+                onclick="smoothScrolling('#form')"
+                type="button"
+              >
+                Получить консультацию
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="infrastructure">
+        <div class="w-container">
+          <div class="infrastructure__wrap">
+
+            <img class="infrastructure__img" src="./img/cubesInfra.png" alt=""/>
+
+            <div class="infrastructure__i-wrap">
+              <h2 class="h2">
+                Необходимая <br />
+                инфраструктура
+              </h2>
+
+              <div class="infrastructure__items">
+                <p class="item text">PostgreSQL Cluster</p>
+                <p class="item text">Elasticsearch Cluster</p>
+                <p class="item text">Redis Cluster</p>
+                <p class="item text">Hyperledger Fabric Orderer Cluster</p>
+                <p class="item text">RabbitMQ Cluster</p>
+                <p class="item text">Hyperledger Fabric Peers</p>
+                           <div class="infrastructure__wrap-btn text">
               <button class="infrastructure__btn text" type="button">
                 Подробнее
               </button>
-              <img class="infrastructure__arrow" src="./img/arrow.svg" alt="" />
+              <img
+                class="infrastructure__arrow"
+                src="./img/arrow.svg"
+                alt=""
+              />
+            </div>
+              </div>
+
+            </div>
+
+ 
+
+          </div>
+          <div class="wrap-table">
+          <table class="infrastructure__table ">
+            <thead>
+              <tr>
+                <th class="infrastructure__table__title">
+                  Компонент инфраструктуры
+                </th>
+                <th class="infrastructure__table__title">Описание</th>
+                <th class="infrastructure__table__title">CPU</th>
+                <th class="infrastructure__table__title">RAM</th>
+                <th class="infrastructure__table__title">DISK (HDD/SSD)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">PostgreSQL Cluster</td>
+                <td class="infrastructure__table__text">
+                  Высокодоступный кластер PostgreSQL (БД) для хранения данных
+                  приложений
+                </td>
+                <td class="infrastructure__table__text">6</td>
+                <td class="infrastructure__table__text">24</td>
+                <td class="infrastructure__table__text">100Gi</td>
+              </tr>
+              <tr>
+                <td class="infrastructure__table__head">Redis Cluster</td>
+                <td class="infrastructure__table__text">
+                  Распределенный кеш для сервисов приложений
+                </td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">16</td>
+                <td class="infrastructure__table__text">-</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">RabbitMQ Cluster</td>
+                <td class="infrastructure__table__text">
+                  Кластер очереди RabbitMQ для обмена сообщениями между
+                  микросервисов
+                </td>
+                <td class="infrastructure__table__text">6</td>
+                <td class="infrastructure__table__text">6</td>
+                <td class="infrastructure__table__text">30Gi</td>
+              </tr>
+              <tr>
+                <td class="infrastructure__table__head">
+                  Elasticsearch Cluster
+                </td>
+                <td class="infrastructure__table__text">
+                  Кластер Elasticsearch для хранения журналов микросервисов и
+                  инфраструктуктурных компонентов
+                </td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">16</td>
+                <td class="infrastructure__table__text">150Gi</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Orderer Cluster
+                </td>
+                <td class="infrastructure__table__text">
+                  Высокодоступный кластер службы упорядочивания распределенного
+                  реестра
+                </td>
+                <td class="infrastructure__table__text">12</td>
+                <td class="infrastructure__table__text">12</td>
+                <td class="infrastructure__table__text">150Gi</td>
+              </tr>
+              <tr>
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Peer - 1
+                </td>
+                <td class="infrastructure__table__text">
+                  Узел эмуляции и подтверждения траназкции организации
+                </td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">50Gi</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Peer - 2
+                </td>
+                <td class="infrastructure__table__text">
+                  Узел эмуляции и подтверждения траназкции организации
+                </td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">50Gi</td>
+              </tr>
+              <tr>
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Peer - 1 CouchDB
+                </td>
+                <td class="infrastructure__table__text">
+                  Кластер БД хранящий World State для узла Peer-1 состоящий из
+                  2ух узлов с (master-master) репликацией
+                </td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">50Gi</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="infrastructure__table__head">
+                  Hyperledger Fabric Peer - 2 CouchDB
+                </td>
+                <td class="infrastructure__table__text">
+                  Кластер БД хранящий World State для узла Peer-2 состоящий из
+                  2ух узлов с (master-master) репликацией
+                </td>
+                <td class="infrastructure__table__text">4</td>
+                <td class="infrastructure__table__text">8</td>
+                <td class="infrastructure__table__text">50Gi</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <div class="infrastructure__documentation">
+            <h3 class="h3">Техническая документация</h3>
+            <div class="infrastructure__documentation__wrap">
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Сведения о стоимости</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Эксплуатация экзенпляра ПО</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Руководство инвестора</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Руководство эмитента</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Руководство оператора</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Руководство номинального держателя</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Функциональные характеристики ПО</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="infrastructure__documentation">
+            <h3 class="h3">Информация о лицензиях</h3>
+            <div class="infrastructure__documentation__wrap">
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Выписка ООО Зилант-СЗКИ1</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Выписка ООО ЗИЛАН-ТЗКИ1</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Лицензия для сайта</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Лицензия ФСБ ООО Зилант</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Руководство оператора</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Руководство номинального держателя</a>
+              </div>
+
+              <div class="infrastructure__documentation__item">
+                <img src="./img/download.svg" alt="" />
+                <a href="">Функциональные характеристики ПО</a>
+              </div>
             </div>
           </div>
         </div>
-
-        <table class="infrastructure__table none">
-          <thead>
-            <tr>
-              <th class="infrastructure__table__title">
-                Компонент инфраструктуры
-              </th>
-              <th class="infrastructure__table__title">Описание</th>
-              <th class="infrastructure__table__title">CPU</th>
-              <th class="infrastructure__table__title">RAM</th>
-              <th class="infrastructure__table__title">DISK (HDD/SSD)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="bg-white">
-              <td class="infrastructure__table__head">PostgreSQL Cluster</td>
-              <td class="infrastructure__table__text">
-                Высокодоступный кластер PostgreSQL (БД) для хранения данных
-                приложений
-              </td>
-              <td class="infrastructure__table__text">6</td>
-              <td class="infrastructure__table__text">24</td>
-              <td class="infrastructure__table__text">100Gi</td>
-            </tr>
-            <tr>
-              <td class="infrastructure__table__head">Redis Cluster</td>
-              <td class="infrastructure__table__text">
-                Распределенный кеш для сервисов приложений
-              </td>
-              <td class="infrastructure__table__text">4</td>
-              <td class="infrastructure__table__text">16</td>
-              <td class="infrastructure__table__text">-</td>
-            </tr>
-            <tr class="bg-white">
-              <td class="infrastructure__table__head">RabbitMQ Cluster</td>
-              <td class="infrastructure__table__text">
-                Кластер очереди RabbitMQ для обмена сообщениями между
-                микросервисов
-              </td>
-              <td class="infrastructure__table__text">6</td>
-              <td class="infrastructure__table__text">6</td>
-              <td class="infrastructure__table__text">30Gi</td>
-            </tr>
-            <tr>
-              <td class="infrastructure__table__head">Elasticsearch Cluster</td>
-              <td class="infrastructure__table__text">
-                Кластер Elasticsearch для хранения журналов микросервисов и
-                инфраструктуктурных компонентов
-              </td>
-              <td class="infrastructure__table__text">8</td>
-              <td class="infrastructure__table__text">16</td>
-              <td class="infrastructure__table__text">150Gi</td>
-            </tr>
-            <tr class="bg-white">
-              <td class="infrastructure__table__head">
-                Hyperledger Fabric Orderer Cluster
-              </td>
-              <td class="infrastructure__table__text">
-                Высокодоступный кластер службы упорядочивания распределенного
-                реестра
-              </td>
-              <td class="infrastructure__table__text">12</td>
-              <td class="infrastructure__table__text">12</td>
-              <td class="infrastructure__table__text">150Gi</td>
-            </tr>
-            <tr>
-              <td class="infrastructure__table__head">
-                Hyperledger Fabric Peer - 1
-              </td>
-              <td class="infrastructure__table__text">
-                Узел эмуляции и подтверждения траназкции организации
-              </td>
-              <td class="infrastructure__table__text">4</td>
-              <td class="infrastructure__table__text">8</td>
-              <td class="infrastructure__table__text">50Gi</td>
-            </tr>
-            <tr class="bg-white">
-              <td class="infrastructure__table__head">
-                Hyperledger Fabric Peer - 2
-              </td>
-              <td class="infrastructure__table__text">
-                Узел эмуляции и подтверждения траназкции организации
-              </td>
-              <td class="infrastructure__table__text">4</td>
-              <td class="infrastructure__table__text">8</td>
-              <td class="infrastructure__table__text">50Gi</td>
-            </tr>
-            <tr>
-              <td class="infrastructure__table__head">
-                Hyperledger Fabric Peer - 1 CouchDB
-              </td>
-              <td class="infrastructure__table__text">
-                Кластер БД хранящий World State для узла Peer-1 состоящий из 2ух
-                узлов с (master-master) репликацией
-              </td>
-              <td class="infrastructure__table__text">4</td>
-              <td class="infrastructure__table__text">8</td>
-              <td class="infrastructure__table__text">50Gi</td>
-            </tr>
-            <tr class="bg-white">
-              <td class="infrastructure__table__head">
-                Hyperledger Fabric Peer - 2 CouchDB
-              </td>
-              <td class="infrastructure__table__text">
-                Кластер БД хранящий World State для узла Peer-2 состоящий из 2ух
-                узлов с (master-master) репликацией
-              </td>
-              <td class="infrastructure__table__text">4</td>
-              <td class="infrastructure__table__text">8</td>
-              <td class="infrastructure__table__text">50Gi</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="infrastructure__documentation">
-          <h3 class="h3">Техническая документация</h3>
-          <div class="infrastructure__documentation__wrap">
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Сведения о стоимости</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Эксплуатация экзенпляра ПО</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Руководство инвестора</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Руководство эмитента</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Руководство оператора</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Руководство номинального держателя</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Функциональные характеристики ПО</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="infrastructure__documentation">
-          <h3 class="h3">Информация о лицензиях</h3>
-          <div class="infrastructure__documentation__wrap">
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Выписка ООО Зилант-СЗКИ1</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Выписка ООО ЗИЛАН-ТЗКИ1</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Лицензия для сайта</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Лицензия ФСБ ООО Зилант</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Руководство оператора</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Руководство номинального держателя</a>
-            </div>
-
-            <div class="infrastructure__documentation__item">
-              <img src="./img/download.svg" alt="" />
-              <a href="">Функциональные характеристики ПО</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+      </section>
+    </main>
     <footer class="footer-wrap" id="form">
       <div class="w-container">
         <section class="offer">
@@ -584,6 +598,8 @@
           </div>
 
           <form class="offer__form">
+            <h2 class="offer__form__form-title h2">Получить консультацию</h2>
+
             <div class="offer__form-input-container">
               <input
                 placeholder="Имя"
