@@ -646,7 +646,6 @@
                 cols="50"
                 class="offer__form-message input"
                 rows="5"
-                required
               ></textarea>
               <span class="input-error-message"></span>
             </div>
@@ -658,6 +657,35 @@
         </section>
       </div>
     </footer>
+
+    <section class="success-modal">
+      <div class="success-modal__container">
+        <div
+          class="success-modal__close-container"
+          onclick="closeModal('.success-modal')"
+        >
+          <svg
+            class="success-modal__close-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="15"
+            height="15"
+            fill="none"
+          >
+            <path
+              fill="#A3AAB5"
+              fill-rule="evenodd"
+              d="M9 7.5l6 6V15h-1.6L7.5 9l-6 6H0v-1.6l6-5.9-6-6V0h1.6l5.9 6 6-6H15v1.6L9 7.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <i class="success-modal__icon"></i>
+        <h2 class="success-modal__title">
+          Спасибо, ваше сообщение <br /> успешно отправлено.
+        </h2>
+        <p class="success-modal__text">Мы свяжемся с вами совсем скоро! </p>
+      </div>
+    </section>
 
     <script src="./js/scripts.min.js"></script>
     <article class="st">
