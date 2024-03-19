@@ -1,3 +1,4 @@
+//скрол по клику на элемент
 function smoothScrolling(element) {
 	$("body,html").animate(
 		{
@@ -7,7 +8,7 @@ function smoothScrolling(element) {
 	);
 }
 
-
+//табы
 $(function () {
 	var tab = $('#tabs .tabs-items > div');
 	tab.hide().filter(':first').show();
@@ -33,6 +34,8 @@ $(function () {
 	}
 });
 
+// Скрытие и отображение таблицы
+
 $(function () {
 	$('.infrastructure__btn').click(function () {
 		$('.infrastructure__table').toggle();
@@ -54,3 +57,82 @@ $(function () {
 		navigator.clipboard.writeText(copyMail);
 	});
 });
+
+function closeModal(element) {
+	$(element).fadeOut();
+}
+
+function openModal(element) {
+	$(element).css("display", "flex");
+}
+
+//Валидация формы
+$(function () {
+	$(".offer__form").validate({
+		rules: {
+			name: "required",
+			phone: {
+				required: true,
+			},
+			company: {
+				required: true,
+			}
+		},
+		messages: {
+			name: {
+				required: "Пожалуйста, заполните поле",
+			},
+			phone: {
+				required: "Пожалуйста, заполните поле",
+			},
+			company: {
+				required: "Пожалуйста, заполните поле",
+			},
+		},
+		errorElement: "span",
+		errorClass: "input-error-message",
+		highlight: function (element) {
+			$(element).addClass("input--error");
+		},
+		unhighlight: function (element) {
+			$(element).removeClass("input--error");
+		},
+		errorPlacement: function (error, element) {
+			error.appendTo(element.parent());
+		},
+		submitHandler: function (form, event) {
+			ajaxSubmit(form, event);
+		},
+	});
+});
+
+//Ajax-обработчик формы
+function ajaxSubmit(form, event) {
+	event.preventDefault();
+	$(".input-error-message").text(null);
+	$(".input").removeClass("input--error");
+	$.ajax({
+		type: "POST",
+		url: "@@mailApiUrl",
+		data: JSON.stringify(Object.assign({}, getFormData(form))),
+		dataType: "json",
+		contentType: "application/json",
+		success: function () {
+			openModal(".success-modal");
+			form.reset()
+
+		},
+	});
+
+}
+
+getFormData = function (data) {
+	const res = {
+		name: data.name.value,
+		phone: data.phone.value,
+		company: data.company.value,
+		message: data.message.value,
+	}
+	return res
+}
+
