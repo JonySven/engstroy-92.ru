@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<url>
+	<loc>https://dfa.zilant.tech/</loc>
+	<lastmod>2024-03-20T14:44:07+01:00</lastmod>
+		<chagefreq>monthly</chagefreq>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://dfa.zilant.tech/politico.html</loc>
+	<lastmod>2024-03-20T14:44:07+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://dfa.zilant.tech/cookies.html</loc>
+	<lastmod>2024-03-20T14:44:07+01:00</lastmod>
+	<priority>0.7</priority>
+</url>
+<url>
+	<loc>https://dfa.zilant.tech/index.html</loc>
+	<lastmod>2024-03-20T14:44:07+01:00</lastmod>
+	<chagefreq>monthly</chagefreq>
+	<priority>1.0</priority>
+</url>
+</urlset>
