@@ -51,6 +51,23 @@ $(function () {
 	});
 });
 
+// Скрытие и отображение блока архитектуры
+
+$(function () {
+	$('.architecture__wrap-btn').click(function () {
+		$('.architecture__shema').toggle();
+		if ($('.architecture__arrow').css("transform") === "none") {
+			$('.architecture__arrow').css("transform", "rotate(180deg)");
+			$('.architecture__shema').removeClass("none")
+			$('.architecture__btn').text("Скрыть")
+		} else {
+			$('.architecture__arrow').css("transform", "none");
+			$('.architecture__shema').addClass("none")
+			$('.architecture__btn').text("Подробная схема")
+		}
+	});
+});
+
 $(function () {
 	$('.intro-head__copy').click(function () {
 		const copyMail = $('.intro-head__mail').text();
