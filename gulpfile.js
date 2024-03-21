@@ -6,7 +6,7 @@ let path = {
     html: source_folder + "/*.html",
     css: source_folder + "/scss/*.scss",
     js: source_folder + "/js/*.js",
-    documents: source_folder + "/docs/**/*",
+    documents: source_folder + "/documents/**/*",
     img: source_folder + "/img/**",
     captcha: source_folder + "/captcha/*.js",
     robots: source_folder + "/*.txt",
@@ -16,7 +16,7 @@ let path = {
     html: project_folder + "/",
     css: project_folder + "/css/",
     js: project_folder + "/js/",
-    documents: project_folder + "/docs/",
+    documents: project_folder + "/documents/",
     img: project_folder + "/img/",
     captcha: project_folder + "/captcha/",
   },
@@ -100,6 +100,12 @@ async function robots() {
   .pipe(gulp.dest(project_folder))
 }
 
+async function documents() {
+  return gulp
+  .src(path.src.documents)
+  .pipe(gulp.dest(path.build.documents))
+}
+
 async function siteMap() {
   return gulp
   .src(path.src.siteMap)
@@ -131,7 +137,7 @@ function watchFiles() {
   gulp.watch([path.watch.img], imageminApp);
 }
 
-const build = gulp.series("removedist", html, js, replaceApiUrl, gulp.parallel(css, imageminApp,   captcha, robots, siteMap));
+const build = gulp.series("removedist", html, js, replaceApiUrl, gulp.parallel(css, imageminApp, documents,  captcha, robots, siteMap));
 
 const watch = gulp.parallel(build, watchFiles, "browserSyncApp");
 
@@ -144,3 +150,4 @@ exports.build = build;
 exports.captcha = captcha;
 exports.robots = robots;
 exports.siteMap = siteMap;
+exports.documents = documents;

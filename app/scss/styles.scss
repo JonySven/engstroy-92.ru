@@ -104,7 +104,8 @@ legend {
     font-family: 'Inter';
 
 }
-.container{
+
+.container {
     padding: 0 15px;
     margin: 0 auto;
     font-family: 'Inter';
@@ -149,6 +150,7 @@ legend {
     background-color: #E6F0F3;
     overflow-x: clip;
     font-family: 'Inter';
+
     &-head {
         display: flex;
         align-items: center;
@@ -958,6 +960,52 @@ legend {
 }
 
 
+.project-details {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Inter';
+
+    &__container {
+        position: relative;
+        padding: 40px 64px;
+        max-width: 930px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: #FFF;
+    }
+
+    &__close-container {
+        position: absolute;
+        right: 45px;
+        top: 30px;
+        cursor: pointer;
+    }
+
+    &__header {
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    &__title {
+        margin-top: 6px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+        color: #6F8787;
+    }
+}
+
 @media screen and (max-width: 1025px) {
     .h2 {
         font-size: 2.5rem;
@@ -1072,14 +1120,16 @@ legend {
     }
 
 }
+
 @media screen and (max-width: 910px) {
-    .intro__img{
-        bottom: -40px;  
+    .intro__img {
+        bottom: -40px;
     }
 }
+
 @media screen and (max-width: 801px) {
-    .intro__img{
-        bottom: -35px;  
+    .intro__img {
+        bottom: -35px;
     }
 }
 
@@ -1168,13 +1218,14 @@ legend {
 }
 
 @media screen and (max-width: 701px) {
-    .intro__img{
-        bottom: -30px;  
+    .intro__img {
+        bottom: -30px;
     }
 }
+
 @media screen and (max-width: 601px) {
-    .intro__img{
-        bottom: -25px;  
+    .intro__img {
+        bottom: -25px;
     }
 }
 
@@ -1203,7 +1254,7 @@ legend {
 
     .intro__img {
         margin-top: 56px;
-        bottom: -19px; 
+        bottom: -19px;
     }
 
     .advantages {
@@ -1290,12 +1341,13 @@ legend {
 }
 
 @media screen and (max-width: 401px) {
-    .intro__img{
-        bottom: -15px;  
+    .intro__img {
+        bottom: -15px;
     }
 }
+
 @media screen and (max-width: 330px) {
-    .intro__img{
-        bottom: -13px;  
+    .intro__img {
+        bottom: -13px;
     }
 }
