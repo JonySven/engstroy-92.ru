@@ -142,8 +142,7 @@ legend {
 .intro {
     padding-top: 60px;
     background-color: #E6F0F3;
-    overflow: hidden;
-
+    overflow-x: clip;
     &-head {
         display: flex;
         align-items: center;
@@ -204,9 +203,11 @@ legend {
     }
 
     &__img {
+        position: relative;
         margin-top: 95px;
         margin-left: 50%;
         transform: translateX(-50%);
+        bottom: -45px;
     }
 }
 
@@ -294,6 +295,7 @@ legend {
         gap: 30px;
         margin-top: 95px;
         align-items: flex-end;
+
         &__items {
             .item {
                 display: flex;
@@ -333,18 +335,30 @@ legend {
             overflow-x: auto;
             display: flex;
             align-items: center;
-            padding: 16px 0;
+            padding: 16px 0 20px;
             gap: 10px;
-            margin: 40px 0;
+            margin: 32px 0 36px;
             white-space: nowrap;
+            font-weight: 600;
+            transform: rotateX(180deg);
+            -ms-transform: rotateX(180deg);
+            /* IE 9 */
+            -webkit-transform: rotateX(180deg);
 
-            .btn {
-                padding: 16px 32px;
-                border-radius: 50px;
-                background: #F3F3F3;
-                color: #4A4A4A;
-                text-decoration: none;
+            /* Safari and Chrome */
+            li {
+                transform: rotateX(180deg);
+
+                .btn {
+                    padding: 16px 32px;
+                    border-radius: 50px;
+                    background: #F3F3F3;
+                    color: #4A4A4A;
+                    text-decoration: none;
+                    transform: rotateX(180deg);
+                }
             }
+
         }
 
         &-items {
@@ -355,24 +369,25 @@ legend {
                 &__wrap {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-
+                    gap: 0 100px;
                 }
 
 
                 .content {
                     display: flex;
                     align-items: flex-start;
-                    gap: 25px;
-                    margin-top: 25px;
+                    gap: 22px;
+                    padding: 12px 0;
                     font-size: 1rem;
                     font-weight: 400;
                     line-height: 140%;
                     color: #505050;
 
+
                 }
 
                 img {
-                    margin-top: 60px;
+                    margin-top: 28px;
                 }
             }
         }
@@ -381,15 +396,18 @@ legend {
 
 }
 
-.architecture{
+.architecture {
     padding-bottom: 40px;
-    &__wrap{
+
+    &__wrap {
         font-family: 'Inter';
     }
-    &__title{
+
+    &__title {
         text-align: center;
     }
-    &__items{
+
+    &__items {
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -397,7 +415,8 @@ legend {
         max-width: 950px;
         width: 100%;
         margin: 40px auto 0;
-        .item{
+
+        .item {
             display: flex;
             flex-direction: column;
             align-self: stretch;
@@ -408,21 +427,24 @@ legend {
             width: 100%;
             border-radius: 24px;
             background-color: #F7F7F7;
-            &__head{
+
+            &__head {
                 font-size: 1.25rem;
                 font-weight: 700;
                 line-height: 1.5rem;
                 text-align: center;
                 color: #003C51;
             }
-            &__img{
+
+            &__img {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 80px;
                 margin: 40px 0;
             }
-            &__text{
+
+            &__text {
                 font-size: 1rem;
                 font-weight: 400;
                 line-height: 140%;
@@ -431,7 +453,8 @@ legend {
             }
         }
     }
-    &__wrap-btn{
+
+    &__wrap-btn {
         margin: 42px 0;
         display: flex;
         justify-content: center;
@@ -439,14 +462,16 @@ legend {
         gap: 12px;
         cursor: pointer;
     }
-    &__btn{
+
+    &__btn {
         display: flex;
         align-items: center;
         justify-content: space-between;
         color: #22AB79;
         font-weight: 700;
     }
-    &__shema{
+
+    &__shema {
         padding-bottom: 80px;
     }
 }
@@ -712,7 +737,7 @@ legend {
                 border-radius: 50px;
                 background: #003C51;
             }
-            
+
             &-politic {
                 margin-top: 1.44rem;
 
@@ -833,6 +858,7 @@ legend {
 
     .politico {
         font-family: 'Inter';
+
         .i-wrap {
             display: flex;
             align-items: center;
@@ -972,7 +998,7 @@ legend {
         margin-top: 65px;
     }
 
-    .advantages .first{
+    .advantages .first {
         padding: 32px;
     }
 
@@ -1040,6 +1066,17 @@ legend {
     }
 
 }
+@media screen and (max-width: 910px) {
+    .intro__img{
+        bottom: -40px;  
+    }
+}
+@media screen and (max-width: 801px) {
+    .intro__img{
+        bottom: -35px;  
+    }
+}
+
 
 @media screen and (max-width: 769px) {
     .advantages__wrap {
@@ -1054,7 +1091,11 @@ legend {
         max-width: 350px;
     }
 
-    .architecture__items{
+    .functionality .tabs-items .tabs-item__wrap {
+        gap: 0 20px;
+    }
+
+    .architecture__items {
         flex-direction: column;
     }
 
@@ -1108,14 +1149,27 @@ legend {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .politico-wrap .politico__title {
         font-size: 26px;
     }
+
     .cookies .i-wrap {
         flex-direction: column;
         align-items: flex-start;
     }
 
+}
+
+@media screen and (max-width: 701px) {
+    .intro__img{
+        bottom: -30px;  
+    }
+}
+@media screen and (max-width: 601px) {
+    .intro__img{
+        bottom: -25px;  
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -1143,6 +1197,7 @@ legend {
 
     .intro__img {
         margin-top: 56px;
+        bottom: -19px; 
     }
 
     .advantages {
@@ -1177,13 +1232,15 @@ legend {
     }
 
     .architecture__items .item__img {
-        gap: 30px;    
+        gap: 30px;
     }
-    .architecture__items .item{
+
+    .architecture__items .item {
         padding: 24px;
     }
-    .architecture__items .item__head{
-        font-size: 1rem;    
+
+    .architecture__items .item__head {
+        font-size: 1rem;
         line-height: 1.19rem;
     }
 
@@ -1223,5 +1280,16 @@ legend {
 
     .footer-wrap {
         padding: 25px 0;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    .intro__img{
+        bottom: -15px;  
+    }
+}
+@media screen and (max-width: 330px) {
+    .intro__img{
+        bottom: -13px;  
     }
 }
