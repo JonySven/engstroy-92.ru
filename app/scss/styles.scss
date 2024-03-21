@@ -1006,6 +1006,56 @@ legend {
     }
 }
 
+.error-page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Inter';
+    padding: 0 15px;
+    height: 100vh;
+    background-image: url("../img/bg404.png");
+    color: #eee;
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.63);
+    }
+
+    h1 {
+        margin-bottom: 1.5rem;
+        font-size: 4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1.625rem;
+        line-height: 130%;
+        text-align: center;
+    }
+
+    a {
+        margin-top: 1.5rem;
+        font-size: 1.625rem;
+        white-space: nowrap;
+        color: #e6f0f3;
+
+        &:hover {
+            color: #28b380;
+        }
+    }
+
+}
+
+
 @media screen and (max-width: 1025px) {
     .h2 {
         font-size: 2.5rem;
@@ -1121,6 +1171,12 @@ legend {
 
 }
 
+@media screen and (max-width: 990px) {
+    .advantages__items .item .first__text {
+        max-width: 400px;
+    }
+}
+
 @media screen and (max-width: 910px) {
     .intro__img {
         bottom: -40px;
@@ -1217,9 +1273,18 @@ legend {
 
 }
 
+@media screen and (max-width: 740px) {
+    .advantages__items .item .first__text {
+        max-width: 300px;
+    }
+}
+
 @media screen and (max-width: 701px) {
     .intro__img {
         bottom: -30px;
+    }
+    .advantages__items .item .first__text {
+        max-width: 230px;
     }
 }
 
@@ -1262,8 +1327,17 @@ legend {
     }
 
     .advantages .first {
-        padding: 24px 24px 250px 24px;
-        background-size: contain;
+        padding: 24px 24px 200px 24px;
+        background-size: 300px;
+    }
+
+    .advantages__items .item .first__text{
+        max-width: 245px;
+    }
+
+    .advantages__items .item .first__text .first__text__word {
+        display: block;
+        margin-top: 12px;
     }
 
     .advantages__i-wrap {
