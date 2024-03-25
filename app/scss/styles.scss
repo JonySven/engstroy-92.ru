@@ -474,7 +474,7 @@ legend {
         margin: 0 auto;
         margin-top: 42px;
         gap: 12px;
-        width: 216px;
+        width: 250px;
         white-space: nowrap;
         cursor: pointer;
     }
@@ -682,7 +682,6 @@ legend {
         display: flex;
         justify-content: space-between;
 
-        // gap: 115px;
         &__about__title {
             display: block;
             max-width: 420px;
@@ -890,36 +889,41 @@ legend {
     text-align: center;
 }
 
-.politico-wrap {
-    padding: 50px 0;
+.politico-heder {
+    padding: 30px 0;
     background-color: #E6F0F3;
-    //background: linear-gradient(145deg, rgba(35, 203, 141, 1) 0%, rgba(230, 240, 243, 1) 70%);
+    font-family: 'Inter';
+    color: #2c386d;
+
+    .i-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+
+        a {
+            white-space: nowrap;
+            color: #2c386d;
+            font-weight: 600;
+
+            &:hover {
+                color: #23CB8D;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 42px;
+        font-weight: 700;
+    }
+}
+
+.politico-wrap {
+    padding-bottom: 50px;
 
     .politico {
         font-family: 'Inter';
         color: #2c386d;
-
-        .i-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 30px;
-
-            a {
-                white-space: nowrap;
-                color: #333;
-                font-weight: 600;
-
-                &:hover {
-                    color: #23CB8D;
-                }
-            }
-        }
-
-        &__title {
-            font-size: 42px;
-            font-weight: 700;
-        }
 
         &__head {
             margin: 24px 0;
@@ -1294,20 +1298,28 @@ legend {
         margin-bottom: 40px;
     }
 
-    .politico-wrap .politico .i-wrap {
+    .politico-heder .i-wrap {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .politico-wrap .politico__title {
+    .politico-heder__title {
         font-size: 26px;
     }
 
-    .footer-wrap .offer{
+    .politico-wrap .politico__head {
+        font-size: 24px;
+    }
+
+    .politico-wrap .politico ol {
+        padding-left: 25px;
+    }
+
+    .footer-wrap .offer {
         gap: 0;
     }
 
-    .footer-wrap .offer__about__title{
+    .footer-wrap .offer__about__title {
         display: none;
     }
 
@@ -1405,10 +1417,18 @@ legend {
         grid-template-columns: 1fr;
     }
 
+    .advantages-title {
+        margin-bottom: 16px;
+    }
+
     .advantages-decision__items .item {
-        flex-direction: column;
-        align-items: baseline;
-        margin-top: 16px;
+        align-items: flex-start;
+        margin-top: 18px;
+        gap: 10px;
+    }
+
+    .advantages-decision__items .item__subtext {
+        font-size: 12px;
     }
 
     .advantages .text {
@@ -1495,7 +1515,7 @@ legend {
         margin-bottom: 24px;
     }
 
-    .footer-wrap .offer__form .text{
+    .footer-wrap .offer__form .text {
         font-size: 0.8rem;
     }
 
