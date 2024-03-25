@@ -353,6 +353,7 @@ legend {
             margin: 32px 0;
             white-space: nowrap;
             font-weight: 600;
+
             li {
                 .btn {
                     padding: 16px 32px;
@@ -449,11 +450,20 @@ legend {
             }
 
             &__text {
+                display: flex;
+                justify-content: center;
+                gap: 0 15px;
                 font-size: 1rem;
                 font-weight: 400;
                 line-height: 140%;
                 text-align: center;
                 color: #505050;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
             }
         }
     }
@@ -537,28 +547,31 @@ legend {
 }
 
 .infrastructure {
-    margin-top: 100px;
+    margin-top: 150px;
     padding-bottom: 100px;
     background-color: #F7F7F7;
 
-    &__img {
-        display: block;
-        margin-left: 40%;
-        max-width: 500px;
-        width: 100%;
+    &__wrap {
+        position: relative;
+        display: flex;
+        padding-top: 75px;
+        margin-top: 60px;
     }
 
-    &__i-wrap {
-        display: flex;
-        align-items: flex-start;
-        gap: 100px;
-        margin-top: 60px;
+    &__img {
+        position: absolute;
+        right: 0;
+        top: -100px;
+        max-width: 470px;
+        width: 100%;
     }
 
 
     &__items {
         display: grid;
-        grid-template-columns: 8fr 9fr;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 60px;
+        gap: 0 30px;
 
         .item {
             margin-top: 16px;
@@ -582,6 +595,7 @@ legend {
         display: flex;
         align-items: center;
         margin-top: 40px;
+        margin-left: 30%;
         gap: 12px;
         width: 175px;
         cursor: pointer;
@@ -1087,6 +1101,10 @@ legend {
     .footer-wrap .copyright__wrap {
         gap: 50px;
     }
+
+    .infrastructure__items {
+        grid-template-columns: 250px 1fr;
+    }
 }
 
 @media screen and (max-width: 1025px) {
@@ -1162,8 +1180,9 @@ legend {
         margin-left: auto;
     }
 
-    .infrastructure__items {
-        display: block;
+    .infrastructure__img {
+        top: -90px;
+        max-width: 420px;
     }
 
     .infrastructure__items .item {
@@ -1215,10 +1234,23 @@ legend {
     }
 }
 
+@media screen and (max-width: 875px) {
+
+    .infrastructure__img {
+        max-width: 332px;
+        top: -70px;
+    }
+}
+
 @media screen and (max-width: 801px) {
     .intro__img {
         bottom: -35px;
     }
+
+    .infrastructure__items {
+        margin-top: 55px;
+    }
+
 }
 
 
@@ -1235,7 +1267,7 @@ legend {
         max-width: 350px;
     }
 
-    .functionality .tabs__controls{
+    .functionality .tabs__controls {
         gap: 50px 10px;
     }
 
@@ -1343,6 +1375,15 @@ legend {
     .advantages__items .item .first__text {
         max-width: 230px;
     }
+
+    .infrastructure__wrap {
+        padding-top: 250px;
+        padding-bottom: 20px;
+    }
+
+    .infrastructure__items {
+        margin-top: 10px;
+    }
 }
 
 @media screen and (max-width: 601px) {
@@ -1438,7 +1479,7 @@ legend {
         grid-template-columns: 1fr;
     }
 
-    .functionality .tabs__controls{
+    .functionality .tabs__controls {
         gap: 25px 10px;
         padding: 0;
     }
@@ -1504,12 +1545,17 @@ legend {
     }
 
     .infrastructure {
-        margin-top: 60px;
+        margin-top: 100px;
     }
 
     .infrastructure__items {
         grid-template-columns: 1fr;
     }
+
+    .infrastructure__wrap-btn {
+        margin-left: 0;
+    }
+
 
     .footer-wrap {
         padding-top: 60px;
@@ -1549,5 +1595,9 @@ legend {
 @media screen and (max-width: 330px) {
     .intro__img {
         bottom: -13px;
+    }
+
+    .infrastructure__img {
+        top: -65px;
     }
 }
