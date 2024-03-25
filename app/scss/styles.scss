@@ -345,30 +345,21 @@ legend {
 
     .tabs {
         &__controls {
-            overflow-x: auto;
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             padding: 16px 0 20px;
             gap: 10px;
             margin: 32px 0;
             white-space: nowrap;
             font-weight: 600;
-            transform: rotateX(180deg);
-            -ms-transform: rotateX(180deg);
-            /* IE 9 */
-            -webkit-transform: rotateX(180deg);
-
-            /* Safari and Chrome */
             li {
-                transform: rotateX(180deg);
-
                 .btn {
                     padding: 16px 32px;
                     border-radius: 50px;
                     background: #F3F3F3;
                     color: #4A4A4A;
                     text-decoration: none;
-                    transform: rotateX(180deg);
                 }
             }
 
@@ -1244,6 +1235,10 @@ legend {
         max-width: 350px;
     }
 
+    .functionality .tabs__controls{
+        gap: 50px 10px;
+    }
+
     .functionality .tabs-items .tabs-item__wrap {
         gap: 0 20px;
     }
@@ -1441,6 +1436,15 @@ legend {
 
     .functionality .tabs-items .tabs-item__wrap {
         grid-template-columns: 1fr;
+    }
+
+    .functionality .tabs__controls{
+        gap: 25px 10px;
+        padding: 0;
+    }
+
+    .functionality .tabs__controls li .btn {
+        padding: 8px 23px;
     }
 
     .functionality .tabs-items .tabs-item img {
