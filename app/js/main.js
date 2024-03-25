@@ -37,7 +37,7 @@ $(function () {
 // Скрытие и отображение таблицы
 
 $(function () {
-	$('.infrastructure__btn').click(function () {
+	$('.infrastructure__wrap-btn').click(function () {
 		$('.infrastructure__table').toggle();
 		if ($('.infrastructure__arrow').css("transform") === "none") {
 			$('.infrastructure__arrow').css("transform", "rotate(180deg)");
