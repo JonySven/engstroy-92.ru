@@ -956,40 +956,39 @@ legend {
 }
 
 .cookies {
-    background-color: #E6F0F3;
-    padding: 50px 0;
+    margin-top: 1rem;
     font-family: 'Inter';
-
-    .i-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 30px;
-
-        a {
-            white-space: nowrap;
-            color: #000;
-
-            &:hover {
-                color: #23CB8D;
-            }
-        }
-    }
-
-    &__title {
-        font-size: 40px;
-        font-weight: 700;
-    }
+    color: #2c386d;
 
     &__text {
-        margin-top: 50px;
+        font-weight: 400;
         font-size: 16px;
+        line-height: 150%;
+        padding-bottom: 16px;
     }
 
     &__link {
-        color: #8d34ff;
+        font-weight: 600;
+        color: #23CB8D;
+    }
+
+    ol {
+        padding-left: 25px;
+
+        li {
+            margin-top: 15px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            span {
+                white-space: wrap;
+            }
+        }
     }
 }
+
+
+
 
 .st {
     display: block;
