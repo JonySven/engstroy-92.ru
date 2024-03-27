@@ -145,6 +145,13 @@ legend {
     display: none;
 }
 
+.sub {
+    position: relative;
+    left: -4px;
+    vertical-align: super;
+    font-size: .7rem;
+}
+
 .intro {
     padding-top: 60px;
     background-color: #E6F0F3;
@@ -265,6 +272,14 @@ legend {
                 width: 100%;
             }
 
+
+            .second__text {
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5rem;
+                color: #505050;
+            }
+
             &__text {
                 margin-top: 12px;
                 font-size: 1rem;
@@ -272,6 +287,7 @@ legend {
                 line-height: 1.5rem;
                 color: #505050;
             }
+
 
             &__link {
                 font-size: 1rem;
@@ -284,6 +300,7 @@ legend {
                 width: 25px;
             }
         }
+
     }
 
     .first {
@@ -772,6 +789,7 @@ legend {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        align-items: center;
         font-size: 1.2rem;
         font-weight: 400;
         line-height: 140%;
@@ -800,14 +818,15 @@ legend {
 
     &__link {
         display: flex;
-        flex-direction: column;
-        flex-basis: 41%;
-        gap: 5px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
         white-space: nowrap;
 
         a {
             color: #22AB79;
             font-weight: 600;
+            font-size: 1rem;
         }
     }
 }
@@ -980,6 +999,7 @@ legend {
             font-weight: 400;
             font-size: 14px;
             line-height: 150%;
+
             span {
                 white-space: wrap;
             }
@@ -1215,15 +1235,17 @@ legend {
         max-width: 380px;
     }
 
-    .copyright__link {
-        flex-basis: 66%;
-    }
-
 }
 
 @media screen and (max-width: 990px) {
     .advantages__items .item .first__text {
         max-width: 400px;
+    }
+
+    .copyright__link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
     }
 }
 
@@ -1354,8 +1376,9 @@ legend {
     }
 
     .copyright__wrap {
-        flex-direction: column-reverse;
-        gap: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
     }
 
 }
@@ -1416,15 +1439,23 @@ legend {
         font-size: 1.5rem;
     }
 
+    .intro {
+        padding-top: 50px;
+    }
+
     .intro-head {
         flex-direction: column;
-        gap: 24px;
+        gap: 15px;
+    }
+
+    .intro-head__phone {
+        letter-spacing: 1.1px;
     }
 
     .intro__title {
         font-size: 1.75rem;
         line-height: 120%;
-        margin: 57px auto 0;
+        margin: 30px auto 0;
     }
 
     .intro__btn {
@@ -1435,7 +1466,7 @@ legend {
     }
 
     .intro__img {
-        margin-top: 56px;
+        margin-top: 15px;
         bottom: -19px;
     }
 
@@ -1446,6 +1477,10 @@ legend {
     .advantages__items .item .first__text .first__text__word {
         display: block;
         margin-top: 12px;
+    }
+
+    .advantages__items .item .second__text {
+        margin-top: 10px;
     }
 
     .advantages__i-wrap {
@@ -1492,7 +1527,7 @@ legend {
     }
 
     .architecture {
-        margin-top: 60px;
+        margin-top: 0px;
     }
 
     .architecture__items .item__img {
@@ -1506,6 +1541,10 @@ legend {
     .architecture__items .item__head {
         font-size: 1rem;
         line-height: 1.19rem;
+    }
+
+    .banner {
+        margin-top: 130px;
     }
 
     .banner__img {
@@ -1545,6 +1584,7 @@ legend {
 
     .infrastructure {
         margin-top: 100px;
+        padding-bottom: 50px;
     }
 
     .infrastructure__items {
@@ -1557,15 +1597,27 @@ legend {
 
 
     .footer-wrap {
-        padding-top: 60px;
+        padding-top: 50px;
     }
 
     .footer-wrap .offer__form-input-container {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
+    }
+
+    .footer-wrap .offer__form .input {
+        padding: 15px 10px;
     }
 
     .footer-wrap .offer__form .text {
         font-size: 0.8rem;
+    }
+
+    .footer-wrap .offer__form .btn {
+        margin-top: 20px;
+    }
+
+    .copyright {
+        margin-top: 20px;
     }
 
     .copyright__wrap {
@@ -1576,6 +1628,10 @@ legend {
         flex-direction: column;
         align-items: flex-start;
         gap: 5px;
+    }
+
+    .copyright__link a {
+        font-size: 0.88rem;
     }
 
 
