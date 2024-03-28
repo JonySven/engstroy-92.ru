@@ -404,11 +404,10 @@ legend {
                     font-weight: 400;
                     line-height: 140%;
                     color: #505050;
-
-
                 }
 
-                img {
+                &__wrap-img {
+                    overflow: auto;
                     margin-top: 28px;
                 }
             }
@@ -1453,7 +1452,7 @@ legend {
     }
 
     .intro__title {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
         line-height: 120%;
         margin: 30px auto 0;
     }
