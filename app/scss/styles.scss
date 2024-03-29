@@ -389,9 +389,12 @@ legend {
                 overflow: hidden;
 
                 &__wrap {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
+                    display: flex;
+                    justify-content: space-between;
                     gap: 0 100px;
+                    &-content{
+                        max-width: 50%;
+                    }
                 }
 
 
@@ -1509,7 +1512,12 @@ legend {
     }
 
     .functionality .tabs-items .tabs-item__wrap {
+        display: grid;
         grid-template-columns: 1fr;
+    }
+
+    .functionality .tabs-items .tabs-item__wrap-content {
+        max-width: 100%;
     }
 
     .functionality .tabs__controls {
