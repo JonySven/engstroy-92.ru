@@ -7,6 +7,10 @@ function smoothScrolling(element) {
 		1500
 	);
 }
+//маска номера телефона
+$(function() {
+		$("#offer__form-phone").mask("+7 (999) 999-99-99");
+});
 
 //табы
 $(function () {
