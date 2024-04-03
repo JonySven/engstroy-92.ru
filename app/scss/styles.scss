@@ -152,6 +152,14 @@ legend {
     font-size: .7rem;
 }
 
+.wrap__captcha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
 .intro {
     padding-top: 60px;
     background-color: #E6F0F3;

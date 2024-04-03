@@ -5,13 +5,13 @@
     "mailApiUrl": "http://localhost:3000/v1/contacts"
   },
   "dev": {
-    "apiUrl": "https://solarlab.ru/humanometr/api",
-    "captchaKey": "e72327f0-a973-4272-a55e-d3956c574fe4",
+    "apiUrl": "https://solarlab-devyc.internal.solarlab.ru/humanometr/api",
+    "captchaKey": "c914167f-6d39-4372-b7cb-94b8960cd97c",
     "mailApiUrl": "https://humanometr.ru/mailer/v1/contact/dfa"
   },
   "prod": {
     "apiUrl": "https://solarlab.ru/humanometr/api",
-    "captchaKey": "e72327f0-a973-4272-a55e-d3956c574fe4",
+    "captchaKey": "c914167f-6d39-4372-b7cb-94b8960cd97c",
     "mailApiUrl": "https://humanometr.ru/mailer/v1/contact/dfa"
   }
 }

@@ -83,6 +83,7 @@ gulp.task("browserSyncApp", function () {
     server: {
       baseDir: "./" + project_folder + "/",
     },
+    port: '4200',
     notify: false,
   });
 });

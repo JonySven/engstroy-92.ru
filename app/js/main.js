@@ -8,8 +8,8 @@ function smoothScrolling(element) {
 	);
 }
 //маска номера телефона
-$(function() {
-		$("#offer__form-phone").mask("+7 (999) 999-99-99");
+$(function () {
+	$("#offer__form-phone").mask("+7 (999) 999-99-99");
 });
 
 //табы
@@ -130,22 +130,29 @@ $(function () {
 //Ajax-обработчик формы
 function ajaxSubmit(form, event) {
 	event.preventDefault();
-	$(".input-error-message").text(null);
-	$(".input").removeClass("input--error");
-	$.ajax({
+	let $humanometr = $("humanometr-widget")[0];
+
+	$humanometr.getToken().then(token => {
+  
+	  $(".input-error-message").text(null);
+	  $(".input").removeClass("input--error");
+	  $.ajax({
 		type: "POST",
 		url: "@@mailApiUrl",
-		data: JSON.stringify(Object.assign({}, getFormData(form))),
+		data: JSON.stringify(Object.assign({}, getFormData(form), {
+		  tn: token,
+		  sk: '@@captchaKey'
+		})),
 		dataType: "json",
 		contentType: "application/json",
 		success: function () {
-			openModal(".success-modal");
-			form.reset()
-
+		  openModal(".success-modal");
+		  form.reset()
+		  $humanometr.getCaptcha()
 		},
-	});
-
-}
+	  });
+	})
+  }
 
 getFormData = function (data) {
 	const res = {
