@@ -358,10 +358,33 @@ legend {
 
 
             &__link {
+                position: relative;
+                z-index: 5;
                 font-size: 1rem;
                 font-weight: 400;
                 line-height: 1.5rem;
                 color: #28B380;
+                cursor: pointer;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background-color: #28B380;
+                    transition: 0.15s all ease;
+                }
+
+                &:hover::after {
+                    content: '';
+                    width: 79px;
+                }
+
+                &:active {
+                    color: #003c51;
+                }
             }
 
             img {
