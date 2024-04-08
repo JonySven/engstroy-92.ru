@@ -267,31 +267,6 @@ $hover-link: #5cd49c;
         line-height: 115%;
         text-align: center;
         color: #003C51;
-        animation: move;
-
-        &:hover {
-            color: transparent;
-            background-image: url('../img/i4.jpg');
-            background-clip: text;
-            animation-duration: 10s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            animation-direction: normal;
-
-        }
-    }
-
-    @keyframes move {
-
-        0% {
-            background-position: -600px 0;
-
-        }
-
-        100% {
-            background-position: 1200px 0;
-        }
-
     }
 
     &__subtitle {
