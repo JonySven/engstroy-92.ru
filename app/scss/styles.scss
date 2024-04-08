@@ -160,7 +160,8 @@ legend {
     align-items: center;
     margin: 10px 0;
 }
-.hm.hm-side-block{
+
+.hm.hm-side-block {
     display: none;
 }
 
@@ -217,6 +218,9 @@ legend {
     }
 }
 
+
+$hover-link: #5cd49c;
+
 .intro {
     padding-top: 60px;
     background-color: #E6F0F3;
@@ -241,6 +245,10 @@ legend {
         &__mail {
             font-weight: 600;
             color: #28B380;
+
+            &:hover {
+                color: $hover-link;
+            }
         }
 
         &__copy {
@@ -259,6 +267,31 @@ legend {
         line-height: 115%;
         text-align: center;
         color: #003C51;
+        animation: move;
+
+        &:hover {
+            color: transparent;
+            background-image: url('../img/i4.jpg');
+            background-clip: text;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+
+        }
+    }
+
+    @keyframes move {
+
+        0% {
+            background-position: -600px 0;
+
+        }
+
+        100% {
+            background-position: 1200px 0;
+        }
+
     }
 
     &__subtitle {
@@ -372,13 +405,18 @@ legend {
                     left: 0;
                     width: 0;
                     height: 1px;
-                    background-color: #28B380;
+                    background-color: $hover-link;
                     transition: 0.15s all ease;
+                }
+
+                &:hover {
+                    color: $hover-link;
                 }
 
                 &:hover::after {
                     content: '';
                     width: 79px;
+                    color: $hover-link;
                 }
 
                 &:active {
@@ -391,36 +429,40 @@ legend {
             }
 
             &:before,
-            &:after{
-              content: '';
-              position: absolute;
-              inset: 15px;
-              opacity: 1;
-              transition: opacity 0.35s, transform 0.2s;
-              border-radius: 24px;
+            &:after {
+                content: '';
+                position: absolute;
+                inset: 15px;
+                opacity: 1;
+                transition: opacity 0.35s, transform 0.2s;
+                border-radius: 24px;
             }
-            &:before{
-              border-top: 1px solid #23CB8D;
-              border-bottom: 1px solid #23CB8D;
-              transform: scale(0,1);
-              
+
+            &:before {
+                border-top: 2px solid #23CB8D;
+                border-bottom: 2px solid #23CB8D;
+                transform: scale(0, 1);
+
             }
-            &:after{
-              border-right: 1px solid #23CB8D;
-              border-left: 1px solid #23CB8D;
-              transform: scale(1,0);
+
+            &:after {
+                border-right: 2px solid #23CB8D;
+                border-left: 2px solid #23CB8D;
+                transform: scale(1, 0);
             }
-            &:hover{
+
+            &:hover {
+
                 &:before,
-                &:after{
-                  opacity: 1;
-                  transform: scale(1);
+                &:after {
+                    opacity: 1;
+                    transform: scale(1);
                 }
-                
+
             }
-        
+
         }
-    
+
 
     }
 
@@ -458,6 +500,10 @@ legend {
 
                 &__link {
                     color: #28B380;
+
+                    &:hover {
+                        color: $hover-link;
+                    }
                 }
 
                 .text {
@@ -640,33 +686,9 @@ legend {
                 }
             }
 
-            &:before,
-            &:after{
-              content: '';
-              position: absolute;
-              inset: 15px;
-              opacity: 1;
-              transition: opacity 0.35s, transform 0.2s;
-              border-radius: 24px;
-            }
-            &:before{
-              border-top: 1px solid #23CB8D;
-              border-bottom: 1px solid #23CB8D;
-              transform: scale(0,1);
-              
-            }
-            &:after{
-              border-right: 1px solid #23CB8D;
-              border-left: 1px solid #23CB8D;
-              transform: scale(1,0);
-            }
-            &:hover{
-                &:before,
-                &:after{
-                  opacity: 1;
-                  transform: scale(1);
-                }
-                
+            &:hover {
+                box-shadow: 13px 13px 15px rgba(0, 0, 0, .2);
+
             }
         }
     }
@@ -681,6 +703,12 @@ legend {
         width: 250px;
         white-space: nowrap;
         cursor: pointer;
+
+        &:hover {
+            .architecture__btn {
+                text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+            }
+        }
     }
 
     &__btn {
@@ -689,6 +717,7 @@ legend {
         justify-content: space-between;
         color: #22AB79;
         font-weight: 700;
+
     }
 
     &__shema {
@@ -706,12 +735,24 @@ legend {
         padding: 50px 40px;
         background-color: #23CB8D;
         border-radius: 24px;
+
+        &:hover {
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+            transition: 0.2s all ease;
+        }
+
     }
 
     &__img {
         position: absolute;
         top: -65px;
         left: 70px;
+        transition: 0.7s;
+        mask: linear-gradient(180deg, #000c 40%, #000, #000c 60%) 100% 100%/250% 250%;
+
+        &:hover {
+            mask-position: 0 0;
+        }
     }
 
     &__img__320 {
@@ -789,6 +830,10 @@ legend {
         color: #22AB79;
         font-weight: 700;
         cursor: pointer;
+
+        &:hover {
+            text-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+        }
     }
 
     .wrap-table {
@@ -878,6 +923,10 @@ legend {
                 color: #22AB79;
                 text-decoration: none;
             }
+
+            &:hover {
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
+            }
         }
     }
 
@@ -936,12 +985,12 @@ legend {
                 width: 100%;
 
                 a {
-                    color: #23CB8D;
+                    color: #22ab79;
                     font-weight: 600;
                     white-space: nowrap;
 
                     &:hover {
-                        color: #28B380;
+                        color: $hover-link;
                     }
                 }
             }
@@ -1000,6 +1049,10 @@ legend {
                 color: #22AB79;
                 font-weight: 600;
                 white-space: nowrap;
+
+                &:hover {
+                    color: $hover-link;
+                }
             }
         }
     }
@@ -1015,6 +1068,10 @@ legend {
             color: #22AB79;
             font-weight: 600;
             font-size: 1rem;
+
+            &:hover {
+                color: $hover-link;
+            }
         }
     }
 }
@@ -1119,7 +1176,7 @@ legend {
             font-weight: 600;
 
             &:hover {
-                color: #23CB8D;
+                color: $hover-link;
             }
         }
     }
