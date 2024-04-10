@@ -52,7 +52,7 @@ function html() {
     .pipe(browserSyncApp.stream());
 }
 
-async function css() {
+function css() {
   return gulp
     .src(path.src.css)
     .pipe(scss({ outputStyle: 'expanded' }))
@@ -138,7 +138,7 @@ function watchFiles() {
   gulp.watch([path.watch.img], imageminApp);
 }
 
-const build = gulp.series("removedist", html, js, replaceApiUrl, gulp.parallel(css, imageminApp, documents,  captcha, robots, siteMap));
+const build = gulp.series("removedist", html, js, css, replaceApiUrl, gulp.parallel(imageminApp, documents,  captcha, robots, siteMap));
 
 const watch = gulp.parallel(build, watchFiles, "browserSyncApp");
 
