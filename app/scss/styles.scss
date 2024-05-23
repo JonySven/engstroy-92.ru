@@ -935,7 +935,11 @@ $hover-link: #5cd49c;
                 color: #000;
                 width: 100%;
                 border: 1px solid rgb(217, 217, 217);
-                border-radius: 5px;
+                border-radius: 20px;
+                box-shadow:
+                 inset 5px 5px 10px 1px rgba(0, 0, 0, .2),
+                 inset -5px -5px 10px 1px rgba(40,179,128,.2);
+                background-color: #fff;
 
                 &::placeholder {
                     color: #767676;
