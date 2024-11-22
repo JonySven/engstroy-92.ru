@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
 	//скрол по клику на элемент
 	function smoothScrolling(element) {
 		$("body,html").animate(
@@ -72,7 +72,7 @@ $(document).ready(function () {
 			}
 		});
 	});
-});
+
 $(function () {
 	$('.intro-head__copy').click(function () {
 		const copyMail = $('.intro-head__mail').text();

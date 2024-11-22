@@ -41,8 +41,8 @@ const gulp = require("gulp"),
   replace = require("gulp-replace");
   let rename = require("gulp-rename");
   let cleanCSS = require("gulp-clean-css");
-let argv = require('yargs').argv; // The contemporary library of choice for parsing command arguments (in this case flags)
-let fs = require('fs'); // Read a file
+  let argv = require('yargs').argv; 
+  let fs = require('fs'); 
 
 function html() {
   return gulp
