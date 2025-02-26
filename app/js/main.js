@@ -1,167 +1,79 @@
 
-	//скрол по клику на элемент
-	function smoothScrolling(element) {
-		$("body,html").animate(
-			{
-				scrollTop: $(element).offset().top,
-			},
-			1500
-		);
-	}
-	//маска номера телефона
-	$(function () {
-		$("#offer__form-phone").mask("+7 (999) 999-99-99");
-	});
-
-	//табы
-	$(function () {
-		var tab = $('#tabs .tabs-items > div');
-		tab.hide().filter(':first').show();
-
-		// Клики по вкладкам.
-		$('#tabs .tabs-nav a').click(function () {
-			tab.hide();
-			tab.filter(this.hash).show();
-			$('#tabs .tabs-nav a').removeClass('active');
-			$(this).addClass('active');
-			return false;
-		}).filter(':first').click();
-
-		// Клики по якорным ссылкам.
-		$('.tabs-target').click(function () {
-			$('#tabs .tabs-nav a[href=' + $(this).attr('href') + ']').click();
-		});
-
-		// Отрытие вкладки из хеша URL
-		if (window.location.hash) {
-			$('#tabs-nav a[href=' + window.location.hash + ']').click();
-			window.scrollTo(0, $("#".window.location.hash).offset().top);
-		}
-	});
-
-	// Скрытие и отображение таблицы
-
-	$(function () {
-		$('.infrastructure__wrap-btn').click(function () {
-			$('.infrastructure__table').toggle();
-			if ($('.infrastructure__arrow').css("transform") === "none") {
-				$('.infrastructure__arrow').css("transform", "rotate(180deg)");
-				$('.infrastructure__table').removeClass("none")
-				$('.infrastructure__btn').text("Скрыть")
-			} else {
-				$('.infrastructure__arrow').css("transform", "none");
-				$('.infrastructure__table').addClass("none")
-				$('.infrastructure__btn').text("Подробнее")
+$('.slider').slick({
+	infinite: true,
+	dots: false,
+	responsive: [
+		{
+			breakpoint: 769,
+			settings: {
+				arrows: false,
 			}
-		});
-	});
-
-	// Скрытие и отображение блока архитектуры
-
-	$(function () {
-		$('.architecture__wrap-btn').click(function () {
-			$('.architecture__shema').toggle();
-			if ($('.architecture__arrow').css("transform") === "none") {
-				$('.architecture__arrow').css("transform", "rotate(180deg)");
-				$('.architecture__shema').removeClass("none")
-				$('.architecture__btn').text("Скрыть")
-			} else {
-				$('.architecture__arrow').css("transform", "none");
-				$('.architecture__shema').addClass("none")
-				$('.architecture__btn').text("Подробная схема")
-			}
-		});
-	});
-
-$(function () {
-	$('.intro-head__copy').click(function () {
-		const copyMail = $('.intro-head__mail').text();
-		navigator.clipboard.writeText(copyMail);
-	});
+		},
+	]
+}
+);
+//переход по главным слайдам 
+$('.header__link a').click(function(e) {
+	e.preventDefault();
+	const slideIndex = $(this).data('slide')
+	$('.slider').slick('slickGoTo', slideIndex);
 });
 
-function closeModal(element) {
-	$(element).fadeOut();
-}
 
-function openModal(element) {
-	$(element).css("display", "flex");
-}
-
-//Валидация формы
-$(function () {
-	$(".offer__form").validate({
-		rules: {
-			name: "required",
-			phone: {
-				required: true,
-			},
-			company: {
-				required: true,
-			}
-		},
-		messages: {
-			name: {
-				required: "Пожалуйста, заполните поле",
-			},
-			phone: {
-				required: "Пожалуйста, заполните поле",
-			},
-			company: {
-				required: "Пожалуйста, заполните поле",
-			},
-		},
-		errorElement: "span",
-		errorClass: "input-error-message",
-		highlight: function (element) {
-			$(element).addClass("input--error");
-		},
-		unhighlight: function (element) {
-			$(element).removeClass("input--error");
-		},
-		errorPlacement: function (error, element) {
-			error.appendTo(element.parent());
-		},
-		submitHandler: function (form, event) {
-			ajaxSubmit(form, event);
-		},
-	});
+$('.slider-for').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	swipe: false,
+	fade: true,
+	adaptiveHeight: true,
+	asNavFor: '.slider-nav',
 });
 
-//Ajax-обработчик формы
-function ajaxSubmit(form, event) {
-	event.preventDefault();
-	let $humanometr = $("humanometr-widget")[0];
+$('.slider-nav').slick({
+	slidesToShow: 3,
+	slidesToScroll: 1,
+	asNavFor: '.slider-for',
+	dots: true,
+	arrows: true,
+	centerMode: true,
+	focusOnSelect: true,
+	autoplaySpeed: 2000,
+	swipe: false,
+	responsive: [
+		{
+			breakpoint: 769,
+			settings: {
+				slidesToShow: 2
+			}
+		},
+		{
+			breakpoint: 500,
+			settings: {
+				slidesToShow: 1
+			}
+		},
+	]
+});
 
-	$humanometr.getToken().then(token => {
 
-		$(".input-error-message").text(null);
-		$(".input").removeClass("input--error");
-		$.ajax({
-			type: "POST",
-			url: "@@mailApiUrl",
-			data: JSON.stringify(Object.assign({}, getFormData(form), {
-				tn: token,
-				sk: '@@captchaKey'
-			})),
-			dataType: "json",
-			contentType: "application/json",
-			success: function () {
-				openModal(".success-modal");
-				form.reset()
-				$humanometr.getCaptcha()
-			},
-		});
-	})
-}
+// Обработчик клика по изображению для увеличения
+$('.clickable-image').click(function () {
+	const imgSrc = $(this).attr('src');
+	console.log(imgSrc);
 
-getFormData = function (data) {
-	const res = {
-		name: data.name.value,
-		phone: data.phone.value,
-		company: data.company.value,
-		message: data.message.value,
+	$('.zoom-overlay .zoomed-image').attr('src', imgSrc);
+	$('.zoom-overlay').fadeIn(); // Показываем оверлей
+});
+
+// Закрытие оверлея при клике на кнопку закрытия
+$('.close-zoom').click(function () {
+	$('.zoom-overlay').fadeOut(); // Скрываем оверлей
+});
+
+// Закрытие оверлея при клике вне изображения
+$('.zoom-overlay').click(function (event) {
+	if ($(event.target).hasClass('zoom-overlay')) {
+		$('.zoom-overlay').fadeOut();
 	}
-	return res
-}
-
+});

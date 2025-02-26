@@ -38,11 +38,11 @@ const gulp = require("gulp"),
   del = require("del"),
   autoprefixer = require("gulp-autoprefixer"),
   scss = require('gulp-sass')(require('sass'));
-  replace = require("gulp-replace");
-  let rename = require("gulp-rename");
-  let cleanCSS = require("gulp-clean-css");
-  let argv = require('yargs').argv; 
-  let fs = require('fs'); 
+replace = require("gulp-replace");
+let rename = require("gulp-rename");
+let cleanCSS = require("gulp-clean-css");
+let argv = require('yargs').argv;
+let fs = require('fs');
 
 function html() {
   return gulp
@@ -72,12 +72,6 @@ function js() {
     .pipe(gulp.dest(path.build.js));
 }
 
-async function captcha() {
-  return gulp
-      .src(path.src.captcha)
-      .pipe(gulp.dest(path.build.captcha))
-}
-
 gulp.task("browserSyncApp", function () {
   browserSyncApp.init({
     server: {
@@ -95,41 +89,11 @@ async function imageminApp() {
     .pipe(browserSyncApp.stream());
 }
 
-async function robots() {
-  return gulp
-  .src(path.src.robots)
-  .pipe(gulp.dest(project_folder))
-}
-
-async function documents() {
-  return gulp
-  .src(path.src.documents)
-  .pipe(gulp.dest(path.build.documents))
-}
-
-async function siteMap() {
-  return gulp
-  .src(path.src.siteMap)
-  .pipe(gulp.dest(project_folder))
-}
-
 gulp.task("removedist", function () {
   return del("dist");
 });
 
 
-async function replaceApiUrl() {
-  const settings = JSON.parse(fs.readFileSync('environment-config.json', 'utf8'));
-  const env = argv.env;
-  const settingsEnv = settings[env] ? settings[env] : settings['prod'];
-  gulp.src(['./dist/index.html', './dist/index.html', './dist/js/scripts.min.js'])
-      .pipe(replace('@@apiUrl', settingsEnv.apiUrl))
-      .pipe(replace('@@captchaKey', settingsEnv.captchaKey))
-      .pipe(replace('@@mailApiUrl', settingsEnv.mailApiUrl))
-      .pipe(gulp.dest(function(file) {
-        return file.base;
-      }));
-};
 
 function watchFiles() {
   gulp.watch([path.watch.html], html);
@@ -138,7 +102,7 @@ function watchFiles() {
   gulp.watch([path.watch.img], imageminApp);
 }
 
-const build = gulp.series("removedist", html, js, css, replaceApiUrl, gulp.parallel(imageminApp, documents,  captcha, robots, siteMap));
+const build = gulp.series("removedist", html, js, css, gulp.parallel(imageminApp));
 
 const watch = gulp.parallel(build, watchFiles, "browserSyncApp");
 
@@ -148,7 +112,3 @@ exports.css = css;
 exports.imageminApp = imageminApp;
 exports.watch = watch;
 exports.build = build;
-exports.captcha = captcha;
-exports.robots = robots;
-exports.siteMap = siteMap;
-exports.documents = documents;
