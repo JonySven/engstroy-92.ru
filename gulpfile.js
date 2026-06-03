@@ -8,9 +8,9 @@ let path = {
     js: source_folder + "/js/*.js",
     documents: source_folder + "/documents/**/*",
     img: source_folder + "/img/**",
-    captcha: source_folder + "/captcha/*.js",
-    robots: source_folder + "/*.txt",
-    siteMap: source_folder + "/*.xml"
+    fonts: source_folder + "/fonts/*.woff2",
+    sitemap: source_folder + "/sitemap.xml",
+    robots: source_folder + "/robots.txt",
   },
   build: {
     html: project_folder + "/",
@@ -18,7 +18,9 @@ let path = {
     js: project_folder + "/js/",
     documents: project_folder + "/documents/",
     img: project_folder + "/img/",
-    captcha: project_folder + "/captcha/",
+    fonts: project_folder + "/fonts/",
+    sitemap: project_folder + "/",
+    robots: project_folder + "/",
   },
 
   watch: {
@@ -38,17 +40,39 @@ const gulp = require("gulp"),
   del = require("del"),
   autoprefixer = require("gulp-autoprefixer"),
   scss = require('gulp-sass')(require('sass'));
-replace = require("gulp-replace");
 let rename = require("gulp-rename");
 let cleanCSS = require("gulp-clean-css");
-let argv = require('yargs').argv;
-let fs = require('fs');
 
 function html() {
   return gulp
     .src(path.src.html)
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest(project_folder))
+    .pipe(browserSyncApp.stream());
+}
+
+function documents() {
+  return gulp
+    .src(path.src.documents)
+    .pipe(gulp.dest(path.build.documents))
+    .pipe(browserSyncApp.stream());
+}
+
+function fonts() {
+  return gulp.src(path.src.fonts).pipe(gulp.dest(path.build.fonts));
+}
+
+function sitemap() {
+  return gulp
+    .src(path.src.sitemap)
+    .pipe(gulp.dest(path.build.sitemap))
+    .pipe(browserSyncApp.stream());
+}
+
+function robots() {
+  return gulp
+    .src(path.src.robots)
+    .pipe(gulp.dest(path.build.robots))
     .pipe(browserSyncApp.stream());
 }
 
@@ -93,8 +117,6 @@ gulp.task("removedist", function () {
   return del("dist");
 });
 
-
-
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
@@ -102,13 +124,17 @@ function watchFiles() {
   gulp.watch([path.watch.img], imageminApp);
 }
 
-const build = gulp.series("removedist", html, js, css, gulp.parallel(imageminApp));
+const build = gulp.series("removedist", html, js, css, imageminApp, documents, fonts, sitemap, robots);
 
 const watch = gulp.parallel(build, watchFiles, "browserSyncApp");
 
 exports.html = html;
+exports.documents = documents;
 exports.js = js;
 exports.css = css;
 exports.imageminApp = imageminApp;
+exports.fonts = fonts;
+exports.sitemap = sitemap;
+exports.robots = robots;
 exports.watch = watch;
 exports.build = build;
