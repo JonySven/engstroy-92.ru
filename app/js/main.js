@@ -13,7 +13,7 @@ $('.slider').slick({
 }
 );
 //переход по главным слайдам 
-$('.header__link a').click(function(e) {
+$('.header__link a').click(function (e) {
 	e.preventDefault();
 	const slideIndex = $(this).data('slide')
 	$('.slider').slick('slickGoTo', slideIndex);
@@ -50,30 +50,34 @@ $('.slider-nav').slick({
 		{
 			breakpoint: 500,
 			settings: {
-				slidesToShow: 1
+				slidesToShow: 1,
+				dots: false,
 			}
 		},
 	]
 });
 
 
-// Обработчик клика по изображению для увеличения
-$('.clickable-image').click(function () {
-	const imgSrc = $(this).attr('src');
-	console.log(imgSrc);
+$('.mobile__menu').click( function() {
+	$(".header__wrap__mobile").slideToggle(500)
+} )
 
-	$('.zoom-overlay .zoomed-image').attr('src', imgSrc);
-	$('.zoom-overlay').fadeIn(); // Показываем оверлей
-});
+//Увеличение картинки по клику
+$(document).ready(function () {
+	$(".slider-for div img").click(function () {
+		const imageUrl = $(this).attr("src");
 
-// Закрытие оверлея при клике на кнопку закрытия
-$('.close-zoom').click(function () {
-	$('.zoom-overlay').fadeOut(); // Скрываем оверлей
-});
+		// Устанавливаем URL картинки для полноэкранного отображения
+		$("#fullScreenImage").attr("src", imageUrl);
 
-// Закрытие оверлея при клике вне изображения
-$('.zoom-overlay').click(function (event) {
-	if ($(event.target).hasClass('zoom-overlay')) {
-		$('.zoom-overlay').fadeOut();
-	}
+		// Показываем overlay
+		$("#overlay").fadeIn("fast");
+		$("#overlay").css('display', 'flex');
+	});
+
+	$("#overlay").click(function () {
+		// Скрываем overlay при клике вне картинки
+		$(this).fadeOut("fast");
+	});
+
 });

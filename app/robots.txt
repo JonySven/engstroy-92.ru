@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://engstroy-92.ru/sitemap.xml
